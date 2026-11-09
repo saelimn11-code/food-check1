@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FoodCheck Dashboard</title>
+    <style>
+        :root {
+            --bg: #fff6f9;
+            --panel: #ffffff;
+            --panel-soft: #ffe8f1;
+            --line: #f5d4e0;
+            --pink: #e6739a;
+            --pink-dark: #b85778;
+            --rose: #ffb9c9;
+            --green: #66b78e;
+            --orange: #f3a767;
+            --text: #5c2a3d;
+            --muted: #7d586c;
+            --shadow: 0 18px 36px rgba(178, 88, 120, 0.12);
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #fff4f8 0%, #ffeaf2 36%, #fffafc 100%);
+            color: var(--text);
+        }
+
+        a { color: inherit; text-decoration: none; }
+        h1, h2, h3, p { margin: 0; }
+
+        .page {
+            width: min(1200px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 30px 0 60px;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 18px 22px;
+            border: 1px solid rgba(255,255,255,0.7);
+            border-radius: 26px;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(8px);
+            box-shadow: var(--shadow);
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 14px;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+
+        .brand-mark {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #ffcad8, #f4a0bf);
+            box-shadow: inset 0 2px 8px rgba(255,255,255,.7);
+            font-size: 1.7rem;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .nav a {
+            padding: 10px 14px;
+            border-radius: 999px;
+            transition: .2s ease;
+        }
+
+        .nav a:hover,
+        .nav a.is-active {
+            background: #fff2f6;
+            color: var(--pink-dark);
+        }
+
+        .nav .cta {
+            background: linear-gradient(135deg, var(--pink), var(--pink-dark));
+            color: white;
+            box-shadow: 0 10px 20px rgba(216, 93, 140, 0.2);
+        }
+
+        .header-box {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 24px;
+            margin-top: 26px;
+        }
+
+        .welcome,
+        .panel {
+            border: 1px solid var(--line);
+            border-radius: 30px;
+            background: rgba(255,255,255,0.88);
+            box-shadow: var(--shadow);
+        }
+
+        .welcome {
+            position: relative;
+            padding: 34px 28px;
+            overflow: hidden;
+        }
+
+        .welcome::before {
+            content: "";
+            position: absolute;
+            inset: 18px auto auto -18px;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255, 178, 200, 0.35), transparent 68%);
+        }
+
+        .eyebrow {
+            display: inline-block;
+            padding: 7px 12px;
+            border-radius: 999px;
+            background: #fff0f6;
+            color: var(--pink-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin-top: 16px;
+            font-size: clamp(2.2rem, 4vw, 4rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+        }
+
+        .welcome p {
+            margin-top: 12px;
+            max-width: 540px;
+            color: var(--muted);
+            font-size: 1.04rem;
+            line-height: 1.7;
+        }
+
+        .status-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 14px;
+            border-radius: 999px;
+            background: #fff7fa;
+            border: 1px solid #fbdfeb;
+            color: var(--pink-dark);
+            font-weight: 700;
+            font-size: 0.88rem;
+        }
+
+        .dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--green);
+            box-shadow: 0 0 0 4px rgba(102, 183, 142, 0.16);
+        }
+
+        .mini-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 12px;
+            padding: 24px 22px;
+        }
+
+        .mini-meta {
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .mini-value {
+            font-size: clamp(2rem, 3vw, 3rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+
+        .mini-foot {
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-top: 24px;
+        }
+
+        .metric {
+            padding: 22px 18px;
+            border: 1px solid var(--line);
+            border-radius: 24px;
+            background: rgba(255,255,255,0.88);
+            box-shadow: var(--shadow);
+        }
+
+        .metric-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            color: var(--muted);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .metric-icon {
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
+            font-size: 1.2rem;
+            background: var(--panel-soft);
+        }
+
+        .metric-value {
+            margin-top: 18px;
+            font-size: clamp(1.7rem, 2.4vw, 2.7rem);
+            font-weight: 800;
+            letter-spacing: -0.05em;
+        }
+
+        .metric-sub {
+            margin-top: 8px;
+            color: var(--muted);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 22px;
+            margin-top: 24px;
+        }
+
+        .panel {
+            padding: 22px 20px;
+        }
+
+        .panel-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .panel h2 {
+            font-size: 1.1rem;
+        }
+
+        .trend {
+            color: var(--green);
+            font-weight: 700;
+            font-size: 0.8rem;
+        }
+
+        .bars {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            align-items: end;
+            gap: 16px;
+            min-height: 180px;
+            padding-top: 14px;
+        }
+
+        .bar-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            height: 100%;
+        }
+
+        .bar-track {
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            width: 100%;
+            height: 140px;
+            padding: 8px;
+            border-radius: 18px;
+            background: linear-gradient(180deg, #fff7fb, #fff0f5);
+            border: 1px solid var(--line);
+        }
+
+        .bar {
+            width: 100%;
+            max-width: 56px;
+            border-radius: 12px 12px 0 0;
+            background: linear-gradient(180deg, rgba(230, 115, 154, 1), rgba(170, 87, 120, 0.8));
+        }
+
+        .bar.green { background: linear-gradient(180deg, #96d6b4, #59af86); }
+        .bar.orange { background: linear-gradient(180deg, #f7ca8a, #e09a52); }
+
+        .bar-group label {
+            display: block;
+            text-align: center;
+            color: var(--muted);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+
+        .food-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+        }
+
+        .food-table th,
+        .food-table td {
+            padding: 13px 10px;
+            border-bottom: 1px solid #f3dfe7;
+            text-align: left;
+        }
+
+        .food-table th {
+            color: var(--muted);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 9px;
+            border-radius: 999px;
+            font-size: 0.72rem;
+            font-weight: 700;
+            background: #edfdf4;
+            color: #1b7f5b;
+        }
+
+        .tag.warning {
+            background: #fff4e7;
+            color: #bd6a1b;
+        }
+
+        .empty {
+            padding: 14px;
+            color: var(--muted);
+            font-weight: 600;
+        }
+
+        @media (max-width: 900px) {
+            .header-box,
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 640px) {
+            .page {
+                width: min(100% - 18px, 1200px);
+            }
+
+            .topbar {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .food-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="topbar">
+            <div class="brand">
+                <span class="brand-mark" aria-hidden="true">🥑</span>
+                <span>FoodCheck Dashboard</span>
+            </div>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/dashboard" class="is-active">Dashboard</a>
+                <a href="#insights">Insights</a>
+                <a href="/foods" class="cta">Open Food List</a>
+            </nav>
+        </header>
+
+        <section class="header-box">
+            <div class="welcome">
+                <span class="eyebrow">nutrition summary</span>
+                <h1>See what your food is doing.</h1>
+                <p>
+                    Review the overall nutrition trend, compare the main ingredients,
+                    and quickly identify healthier options from the product list.
+                </p>
+                <div class="status-row">
+                    <span class="pill"><span class="dot"></span>Live data</span>
+                    <span class="pill">Updated today</span>
+                </div>
+            </div>
+
+            <div class="panel mini-card">
+                <span class="mini-meta">focus score</span>
+                <div class="mini-value" id="focusScore">--</div>
+                <div class="mini-foot" id="focusLabel">Ready to review</div>
+            </div>
+        </section>
+
+        <section class="stats-grid" aria-label="Dashboard statistics">
+            <article class="metric">
+                <div class="metric-head">
+                    <span>Products</span>
+                    <span class="metric-icon" aria-hidden="true">📦</span>
+                </div>
+                <div class="metric-value" id="productCount">--</div>
+                <div class="metric-sub">Total items</div>
+            </article>
+
+            <article class="metric">
+                <div class="metric-head">
+                    <span>Avg Sugar</span>
+                    <span class="metric-icon" aria-hidden="true">🍬</span>
+                </div>
+                <div class="metric-value" id="avgSugar">--</div>
+                <div class="metric-sub">per 100 g</div>
+            </article>
+
+            <article class="metric">
+                <div class="metric-head">
+                    <span>Avg Fat</span>
+                    <span class="metric-icon" aria-hidden="true">🥑</span>
+                </div>
+                <div class="metric-value" id="avgFat">--</div>
+                <div class="metric-sub">per 100 g</div>
+            </article>
+
+            <article class="metric">
+                <div class="metric-head">
+                    <span>Healthy Picks</span>
+                    <span class="metric-icon" aria-hidden="true">✅</span>
+                </div>
+                <div class="metric-value" id="healthyCount">--</div>
+                <div class="metric-sub">Low sugar and balanced</div>
+            </article>
+        </section>
+
+        <section class="dashboard-grid" id="insights">
+            <article class="panel">
+                <div class="panel-head">
+                    <h2>Nutrition overview</h2>
+                    <span class="trend">Trending</span>
+                </div>
+                <div class="bars" aria-label="Average nutrition bars">
+                    <div class="bar-group">
+                        <div class="bar-track">
+                            <div class="bar" id="barEnergy" style="height: 40%;"></div>
+                        </div>
+                        <label>Energy</label>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar-track">
+                            <div class="bar green" id="barSugar" style="height: 40%;"></div>
+                        </div>
+                        <label>Sugar</label>
+                    </div>
+                    <div class="bar-group">
+                        <div class="bar-track">
+                            <div class="bar orange" id="barFat" style="height: 40%;"></div>
+                        </div>
+                        <label>Fat</label>
+                    </div>
+                </div>
+            </article>
+
+            <article class="panel">
+                <div class="panel-head">
+                    <h2>Highlights</h2>
+                    <span class="trend">Updated</span>
+                </div>
+                <ul id="highlightsList" aria-live="polite"></ul>
+            </article>
+        </section>
+
+        <section class="panel" style="margin-top: 24px;">
+            <div class="panel-head">
+                <h2>Top products</h2>
+                <span class="trend">Low sugar priority</span>
+            </div>
+            <table class="food-table">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Brand</th>
+                        <th>Sugar</th>
+                        <th>Protein</th>
+                        <th>Fat</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="foodTableBody"></tbody>
+            </table>
+        </section>
+    </div>
+
+    <script>
+        function safeNumber(value) {
+            const parsed = Number(value);
+            return Number.isFinite(parsed) ? parsed : 0;
+        }
+
+        function formatNumber(value) {
+            return Number(value).toFixed(1);
+        }
+
+        async function loadDashboardData() {
+            try {
+                const response = await fetch('/foods?sort=sugar&limit=12');
+                if (!response.ok) {
+                    throw new Error('Request failed');
+                }
+
+                const payload = await response.json();
+                const items = Array.isArray(payload.data) ? payload.data : [];
+                const total = Number(payload.count || items.length || 0);
+
+                if (!items.length) {
+                    document.getElementById('foodTableBody').innerHTML = '<tr><td colspan="6" class="empty">No data available yet.</td></tr>';
+                    return;
+                }
+
+                const avgSugar = items.reduce((sum, item) => sum + safeNumber(item.sugar), 0) / items.length;
+                const avgFat = items.reduce((sum, item) => sum + safeNumber(item.fat), 0) / items.length;
+                const avgProtein = items.reduce((sum, item) => sum + safeNumber(item.protein), 0) / items.length;
+                const healthyCount = items.filter((item) => safeNumber(item.sugar) <= 5 && safeNumber(item.fat) <= 10).length;
+                const focusScore = Math.max(40, Math.min(98, Math.round((100 - avgSugar * 2.4 - avgFat * 1.2 + avgProtein * 0.7))));
+
+                document.getElementById('productCount').textContent = total;
+                document.getElementById('avgSugar').textContent = `${formatNumber(avgSugar)} g`;
+                document.getElementById('avgFat').textContent = `${formatNumber(avgFat)} g`;
+                document.getElementById('healthyCount').textContent = healthyCount;
+                document.getElementById('focusScore').textContent = `${focusScore}/100`;
+                document.getElementById('focusLabel').textContent = focusScore >= 75 ? 'Strong nutrition balance' : focusScore >= 60 ? 'Good balance' : 'Needs improvement';
+
+                document.getElementById('barEnergy').style.height = `${Math.min(100, (safeNumber(items[0].energy || 0) / 180) * 100)}%`;
+                document.getElementById('barSugar').style.height = `${Math.min(100, (avgSugar / 20) * 100)}%`;
+                document.getElementById('barFat').style.height = `${Math.min(100, (avgFat / 20) * 100)}%`;
+
+                const bullets = [
+                    `${items[0].name || 'Top food'} has a lower sugar profile than many products in the list.`,
+                    `Average protein is ${formatNumber(avgProtein)} g per 100 g, supporting balanced nutrition.`,
+                    `${healthyCount} items are within a lower-sugar, lighter-fat range.`
+                ];
+
+                const list = document.getElementById('highlightsList');
+                list.innerHTML = bullets.map((text) => `<li>${text}</li>`).join('');
+
+                const rows = items.slice(0, 6).map((item) => {
+                    const sugar = safeNumber(item.sugar);
+                    const protein = safeNumber(item.protein);
+                    const fat = safeNumber(item.fat);
+                    const healthTag = sugar <= 5 && fat <= 10 ? '<span class="tag">Healthy</span>' : '<span class="tag warning">Moderate</span>';
+                    return `
+                        <tr>
+                            <td>${item.name || 'Unknown product'}</td>
+                            <td>${item.brand || '—'}</td>
+                            <td>${formatNumber(sugar)} g</td>
+                            <td>${formatNumber(protein)} g</td>
+                            <td>${formatNumber(fat)} g</td>
+                            <td>${healthTag}</td>
+                        </tr>
+                    `;
+                }).join('');
+
+                document.getElementById('foodTableBody').innerHTML = rows;
+            } catch (error) {
+                console.error(error);
+                document.getElementById('foodTableBody').innerHTML = '<tr><td colspan="6" class="empty">Unable to load dashboard data right now.</td></tr>';
+            }
+        }
+
+        loadDashboardData();
+    </script>
+</body>
+</html>

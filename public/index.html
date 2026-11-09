@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#fff0f7" />
-    <title>PawCare | Smart Pet Companion</title>
+    <title>FoodCheck | Smart Food Companion</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
     <style>
         :root {
             color-scheme: light;
@@ -29,7 +29,7 @@
             min-height: 100vh;
             margin: 0;
             color: var(--ink);
-            font-family: "Sarabun", sans-serif;
+            font-family: "Noto Sans Thai", sans-serif;
             background:
                 radial-gradient(ellipse at 12% 18%, rgba(255,255,255,.92), transparent 30%),
                 radial-gradient(ellipse at 90% 64%, rgba(255,255,255,.8), transparent 26%),
@@ -90,7 +90,7 @@
         .brand-title {
             margin: 0;
             color: #773450;
-            font-family: "Sarabun", sans-serif;
+            font-family: "Noto Sans Thai", sans-serif;
             font-size: clamp(1.7rem, 3.4vw, 2.8rem);
             font-weight: 700;
             letter-spacing: -.02em;
@@ -222,7 +222,7 @@
         .welcome-title {
             margin: 0;
             color: #783724;
-            font-family: "Sarabun", sans-serif;
+            font-family: "Noto Sans Thai", sans-serif;
             font-size: clamp(2.4rem, 5vw, 4.2rem);
             font-weight: 700;
             letter-spacing: -.01em;
@@ -305,7 +305,7 @@
             background: linear-gradient(90deg, #6c3e42, #995a58);
             box-shadow: 0 4px 5px rgba(75, 38, 42, .25);
             color: #ffcf83;
-            font-family: "Sarabun", sans-serif;
+            font-family: "Noto Sans Thai", sans-serif;
             font-size: .9rem;
             font-weight: 700;
             letter-spacing: .01em;
@@ -515,7 +515,7 @@
             border-radius: 999px;
             background: #fff;
             color: #754258;
-            font-family: "Sarabun", sans-serif;
+            font-family: "Noto Sans Thai", sans-serif;
             font-size: .82rem;
             font-weight: 800;
             cursor: pointer;
@@ -711,7 +711,7 @@
                 min-height: 100vh;
                 display: grid;
                 place-items: start center;
-                font-family: "Sarabun", sans-serif;
+                font-family: "Noto Sans Thai", sans-serif;
             }
 
             .page {
@@ -819,7 +819,7 @@
             min-height: 100vh;
             color: var(--paw-ink);
             background: #fffaf6;
-            font-family: "Sarabun", sans-serif;
+            font-family: "Noto Sans Thai", sans-serif;
         }
         button, input { font: inherit; }
         .page {
@@ -1610,7 +1610,7 @@
             .calendar-day { min-height: 34px; }
         }
         body {
-            font-family: "Sarabun", sans-serif;
+            font-family: "Noto Sans Thai", sans-serif;
             font-size: 16px;
             line-height: 1.65;
             letter-spacing: 0;
@@ -1646,35 +1646,633 @@
                 max-height: min(92dvh, 760px);
             }
         }
+        :root {
+            --food-green: #08624f;
+            --food-deep: #064e40;
+            --food-mint: #e8f4ed;
+            --food-text: #273f38;
+            --food-muted: #74857e;
+        }
+        body { background: #f3f7f3; color: var(--food-text); }
+        .sidebar {
+            width: 184px;
+            flex-basis: 184px;
+            padding: 14px 10px 12px;
+            overflow-y: auto;
+            border-right-color: #e1ebe4;
+            background: #fff;
+        }
+        .paw-brand { margin-bottom: 15px; color: var(--food-deep); }
+        .paw-brand-mark { font-size: 2.4rem; }
+        .paw-brand-name { font-size: 1.32rem; }
+        .paw-brand-tagline { color: #788c82; font-size: .64rem; }
+        .side-nav { gap: 3px; }
+        .side-link {
+            min-height: 34px;
+            gap: 8px;
+            padding: 0 8px;
+            border-radius: 9px;
+            color: #52685f;
+            font-size: .72rem;
+            line-height: 1.2;
+        }
+        .side-link:hover, .side-link.is-active { background: #8bc9a6; color: #fff; }
+        .side-icon { width: 17px; flex-basis: 17px; color: #517267; font-size: .9rem; }
+        .side-link:hover .side-icon, .side-link.is-active .side-icon { color: #fff; }
+        .side-divider { margin: 5px 3px; background: #e7eee9; }
+        .sidebar-art { font-size: 1.8rem; }
+        .dashboard-header { min-height: 50px; padding: 7px clamp(14px, 2vw, 26px); }
+        .search-box { min-height: 34px; background: #fff; border-color: #e4ece6; }
+        .search-box:focus-within { border-color: #83bda0; }
+        .dashboard-content { width: min(1420px, 100%); padding: 0 clamp(12px, 1.8vw, 24px) 20px; }
+        .food-home { display: grid; gap: 11px; }
+        .food-hero {
+            min-height: 172px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            padding: 18px clamp(20px, 3vw, 36px);
+            border-radius: 17px;
+            color: #fff;
+            background:
+                radial-gradient(circle at 74% 40%, rgba(84, 150, 112, .33), transparent 25%),
+                radial-gradient(circle at 91% 87%, rgba(136, 198, 129, .18), transparent 25%),
+                linear-gradient(112deg, #075642 0%, #09674f 58%, #084d3f 100%);
+            box-shadow: 0 8px 18px rgba(11, 77, 60, .12);
+        }
+        .food-hero::before, .food-hero::after {
+            position: absolute;
+            right: -25px;
+            width: 210px;
+            height: 210px;
+            border: 1px solid rgba(255,255,255,.07);
+            border-radius: 50%;
+            content: "";
+        }
+        .food-hero::before { top: -135px; }
+        .food-hero::after { right: 112px; bottom: -180px; width: 245px; height: 245px; }
+        .food-hero-copy { width: min(670px, 70%); position: relative; z-index: 2; }
+        .food-hero-eyebrow { display: inline-block; margin-bottom: 5px; padding: 3px 10px; border-radius: 99px; background: rgba(181, 224, 193, .18); color: #b4e1c4; font-size: .61rem; }
+        .food-hero h1 { margin: 0; color: #fff; font-size: clamp(1.55rem, 2.55vw, 2.2rem); font-weight: 800; line-height: 1.1; }
+        .food-hero-copy > p { margin: 3px 0 8px; color: #e0f0e6; font-size: .76rem; }
+        .food-search { width: min(100%, 565px); min-height: 34px; display: flex; align-items: center; gap: 8px; padding: 3px 4px 3px 10px; border: 1px solid rgba(255,255,255,.6); border-radius: 999px; background: #fff; color: #75877e; }
+        .food-search > span { font-size: 1.1rem; line-height: 1; }
+        .food-search input { width: 100%; min-width: 0; border: 0; outline: 0; color: #294239; background: transparent; font-size: .67rem; }
+        .food-search button { min-width: 74px; padding: 5px 10px; border: 0; border-radius: 99px; background: var(--food-green); color: #fff; font-size: .64rem; font-weight: 700; cursor: pointer; }
+        .food-search button:hover { background: #08785f; }
+        .food-hero-tags { display: flex; align-items: center; gap: 5px; margin-top: 6px; color: #d3e8dc; font-size: .59rem; }
+        .food-hero-tags button { padding: 2px 8px; border: 1px solid rgba(255,255,255,.18); border-radius: 99px; background: rgba(255,255,255,.14); color: #fff; font-size: .57rem; cursor: pointer; }
+        .food-hero-tags button:hover { background: rgba(255,255,255,.28); }
+        .food-hero-art { position: absolute; z-index: 1; right: 4%; top: 0; width: 34%; height: 100%; }
+        .food-basket { position: absolute; right: 11%; bottom: 36px; width: 174px; height: 74px; display: flex; align-items: flex-start; justify-content: center; gap: 4px; padding-top: 0; border: 4px solid rgba(242, 188, 106, .9); border-bottom: 0; border-radius: 28px 28px 6px 6px; background: linear-gradient(145deg, rgba(246,199,125,.86), rgba(208,151,73,.9)); transform: perspective(100px) rotateX(-7deg); }
+        .food-basket::before { position: absolute; top: -28px; left: 18px; width: 130px; height: 55px; border: 5px solid #e8b96d; border-bottom: 0; border-radius: 80px 80px 0 0; content: ""; }
+        .food-basket span { position: relative; top: -34px; font-size: 2.5rem; filter: drop-shadow(0 3px 2px rgba(0,0,0,.14)); }
+        .food-basket span:nth-child(2) { top: -48px; font-size: 2.8rem; }
+        .food-basket span:nth-child(3) { top: -30px; }
+        .food-basket span:nth-child(4) { top: -39px; }
+        .food-basket-base { position: absolute; right: 8%; bottom: 29px; width: 192px; height: 13px; border-radius: 0 0 13px 13px; background: #d6a354; transform: perspective(100px) rotateX(-10deg); }
+        .food-art-spark { position: absolute; color: #ffe198; font-size: 1.45rem; }
+        .food-art-spark--one { top: 18px; right: 37%; }
+        .food-art-spark--two { top: 51px; right: 1%; font-size: 1rem; }
+        .food-art-leaf { position: absolute; color: #5da878; font-size: 4.7rem; transform: rotate(35deg); }
+        .food-art-leaf--one { right: -4px; bottom: 54px; }
+        .food-art-leaf--two { left: 10px; bottom: 49px; color: #77bd76; font-size: 3.8rem; transform: rotate(-35deg); }
+        .food-shortcuts { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 7px; }
+        .food-shortcut { min-width: 0; min-height: 52px; position: relative; display: grid; grid-template-columns: 25px minmax(0,1fr) 9px; align-items: center; gap: 5px; padding: 5px 6px; border: 1px solid #e7eee9; border-radius: 11px; background: #fff; color: #465e53; text-decoration: none; box-shadow: 0 2px 7px rgba(34,76,53,.035); }
+        .food-shortcut:hover, .food-shortcut.is-current { border-color: #acd5b9; background: #f6fbf7; }
+        .food-shortcut > span { color: #168464; font-size: 1rem; text-align: center; }
+        .food-shortcut strong { font-size: .57rem; line-height: 1.35; }
+        .food-shortcut small { color: #819087; font-size: .48rem; font-weight: 500; }
+        .food-shortcut i { color: #8c9a92; font-size: .85rem; font-style: normal; }
+        .food-section-heading, .food-panel-title { display: flex; align-items: center; justify-content: space-between; gap: 10px; }
+        .food-section-heading { min-height: 20px; margin-top: 1px; }
+        .food-section-heading > div { display: flex; align-items: center; gap: 7px; }
+        .food-section-heading h2 { margin: 0; color: #30493d; font-size: .91rem; font-weight: 800; }
+        .food-section-icon { display: grid; width: 19px; height: 19px; place-items: center; border-radius: 50%; background: #72b87e; color: #fff; font-size: .8rem; }
+        .food-section-heading > a, .food-panel-title > a { color: #477a60; font-size: .58rem; font-weight: 700; text-decoration: none; }
+        .food-overview-grid { display: grid; grid-template-columns: minmax(190px, .9fr) minmax(280px, 1.25fr); gap: 8px; }
+        .food-panel { min-width: 0; padding: 10px 12px; border: 1px solid #e6eee8; border-radius: 13px; background: #fff; box-shadow: 0 3px 10px rgba(37,76,55,.035); }
+        .food-panel h3 { margin: 0; color: #364e42; font-size: .73rem; font-weight: 800; }
+        .food-panel-title > span { color: #829087; font-size: .55rem; }
+        .food-donut-wrap { display: flex; align-items: center; justify-content: space-around; gap: 5px; padding-top: 8px; }
+        .food-donut { width: 94px; height: 94px; flex: 0 0 94px; display: grid; place-items: center; border-radius: 50%; background: conic-gradient(#4aae7b 0 40%, #f5bf69 40% 72%, #ee8992 72% 100%); }
+        .food-donut > div { width: 66px; height: 66px; display: grid; align-content: center; justify-items: center; border-radius: 50%; background: #fff; }
+        .food-donut strong { color: #304a3e; font-size: 1.1rem; line-height: 1.15; }
+        .food-donut span { color: #7e8d83; font-size: .48rem; }
+        .food-legend { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+        .food-legend li { display: grid; grid-template-columns: 8px auto; column-gap: 5px; align-items: center; color: #7b8b81; font-size: .5rem; }
+        .food-legend li strong { grid-column: 2; color: #354c40; font-size: .56rem; }
+        .legend-dot { width: 7px; height: 7px; grid-row: span 2; border-radius: 50%; }
+        .legend-dot--green { background: #4aae7b; }.legend-dot--yellow { background: #f5bf69; }.legend-dot--pink { background: #ee8992; }
+        .nutrition-chart { display: flex; flex-direction: column; }
+        .food-chart { min-height: 113px; flex: 1; display: grid; grid-template-columns: 19px 1fr; gap: 5px; margin-top: 6px; padding: 3px 4px 0 0; background: repeating-linear-gradient(to bottom, transparent 0, transparent 21px, #edf2ee 22px, transparent 23px); }
+        .food-chart-y { display: flex; flex-direction: column; justify-content: space-between; padding-bottom: 21px; color: #85948b; font-size: .46rem; text-align: right; }
+        .food-chart-bars { display: flex; justify-content: space-evenly; align-items: flex-end; gap: 15px; }
+        .food-chart-column { height: 100%; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 4px; color: #65796d; font-size: .5rem; line-height: 1.2; text-align: center; }
+        .food-bar { width: min(30px, 75%); min-height: 4px; border-radius: 4px 4px 0 0; background: #60ad86; transition: height .2s ease; }
+        .food-bar--sugar { background: #eabf71; }.food-bar--fat { background: #6cb6ae; }
+        .food-lower-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+        .food-side-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+        .food-alert-panel { background: #fff; }
+        .food-alert-bell { color: #f18369; }
+        .food-alert-item { display: grid; grid-template-columns: 25px minmax(0,1fr) 8px; align-items: center; gap: 5px; margin-top: 6px; padding: 5px 6px; border-radius: 8px; background: #f8f4f2; }
+        .food-alert-item:nth-of-type(3) { background: #fff7eb; }.food-alert-item:nth-of-type(4) { background: #eff7ef; }
+        .food-alert-icon { display: grid; width: 23px; height: 23px; place-items: center; border-radius: 50%; background: #fff; font-size: .8rem; }
+        .food-alert-item strong { display: block; color: #5d675f; font-size: .49rem; }
+        .food-alert-item p { margin: 1px 0 0; color: #818b84; font-size: .43rem; line-height: 1.3; }
+        .food-alert-item > span:last-child { color: #8a9b91; }
+        .food-browser { scroll-margin-top: 12px; padding: 13px; }
+        .food-browser .food-panel-title { align-items: flex-start; }
+        .food-browser .food-panel-title h2 { margin: 0; color: #354d41; font-size: .9rem; }
+        .food-browser .food-panel-title p { margin: 2px 0 0; color: #839087; font-size: .57rem; }
+        .food-result-count { padding: 4px 9px; border-radius: 99px; background: #edf6ef; color: #548064 !important; }
+        .food-category-filters { display: flex; flex-wrap: wrap; gap: 5px; margin: 9px 0; }
+        .food-category-filters button { padding: 4px 10px; border: 1px solid #e2ebe4; border-radius: 99px; background: #fff; color: #60756a; font-size: .56rem; cursor: pointer; }
+        .food-category-filters button:hover, .food-category-filters button.is-selected { border-color: #64a77e; background: #eaf5ed; color: #26714e; }
+        .food-browser-grid { display: grid; grid-template-columns: repeat(5, minmax(0,1fr)); gap: 8px; }
+        .food-empty-state { grid-column: 1 / -1; margin: 8px 0; color: #78887e; font-size: .65rem; text-align: center; }
+        .food-load-error { margin: 4px 0 0; color: #a74d46; font-size: .57rem; }
+        .food-load-error:not([hidden]) { display: block; }
+        .food-listing-view { display: grid; gap: 8px; scroll-margin-top: 8px; }
+        .food-overview-view[hidden], .food-listing-view[hidden], .food-search-view[hidden], .food-show-more[hidden] { display: none; }
+        .food-listing-hero { min-height: 120px; position: relative; display: flex; align-items: center; overflow: hidden; padding: 14px 22px; border-radius: 15px; color: #fff; background: radial-gradient(circle at 78% 36%, rgba(84,150,112,.3), transparent 25%), linear-gradient(110deg,#075642,#09674f 58%,#084d3f); }
+        .food-listing-hero > div:first-child { position: relative; z-index: 1; width: min(660px, 72%); }
+        .food-listing-eyebrow { color: #b6e2c6; font-size: .55rem; }
+        .food-listing-hero h1 { margin: 2px 0 0; color: #fff; font-size: 1.4rem; font-weight: 800; line-height: 1.2; }
+        .food-listing-hero p { margin: 1px 0 6px; color: #dceee3; font-size: .62rem; }
+        .food-listing-search { min-height: 29px; max-width: 470px; }
+        .food-listing-search input { font-size: .58rem; }
+        .food-listing-search button { min-width: 65px; padding: 4px 8px; font-size: .55rem; }
+        .food-listing-art { position: absolute; right: 7%; bottom: 8px; font-size: clamp(2.4rem,5vw,4.2rem); filter: drop-shadow(0 5px 5px rgba(0,0,0,.17)); }
+        .food-search-view { display: grid; gap: 12px; max-width: 1100px; margin: 0 auto; scroll-margin-top: 12px; }
+        .food-search-hero { padding: clamp(22px,5vw,48px) 18px; border: 1px solid #e3eee5; border-radius: 18px; background: radial-gradient(circle at 85% 25%, #dff0dc, transparent 30%), linear-gradient(135deg,#f6fbf4,#edf7ef); text-align: center; }
+        .food-search-hero > span { color: #438269; font-size: .68rem; font-weight: 800; }
+        .food-search-hero h1 { margin: 6px 0; color: #254c3c; font-size: clamp(1.35rem,3vw,2rem); }
+        .food-search-hero p { margin: 0 auto 15px; color: #708176; font-size: .72rem; }
+        .food-search-form { width: min(660px,100%); min-height: 48px; margin: 0 auto; padding: 5px 6px 5px 14px; border: 1px solid #dfe9e1; border-radius: 99px; background: #fff; box-shadow: 0 5px 18px rgba(38,85,54,.08); }
+        .food-search-form input { font-size: .75rem; }
+        .food-search-form button { min-width: 94px; padding: 9px 16px; font-size: .7rem; }
+        .food-search-suggestions { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 6px; color: #78867d; font-size: .62rem; }
+        .food-search-suggestions button { padding: 5px 10px; border: 1px solid #dfe9e1; border-radius: 99px; background: #fff; color: #537461; font-size: .61rem; cursor: pointer; }
+        .food-search-suggestions button:hover { border-color: #83b699; background: #f3faf4; }
+        .food-search-results { min-height: 120px; padding: 13px; border: 1px solid #e4ece5; border-radius: 14px; background: #fff; }
+        .food-search-results-heading { display: flex; justify-content: space-between; align-items: baseline; gap: 8px; margin-bottom: 10px; color: #42584b; font-size: .7rem; }
+        .food-search-results-heading span { color: #849188; font-size: .58rem; }
+        .food-search-results-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 8px; }
+        .food-search-status { margin: 0; padding: 24px 8px; color: #708176; font-size: .7rem; text-align: center; }
+        .food-search-pagination { display: flex; justify-content: center; align-items: center; gap: 12px; margin-top: 12px; color: #6f8075; font-size: .62rem; }
+        .food-search-pagination[hidden] { display: none; }
+        .food-search-pagination button { padding: 6px 12px; border: 1px solid #dfe9e1; border-radius: 99px; background: #f8fbf8; color: #35684e; cursor: pointer; }
+        .food-search-pagination button:disabled { cursor: not-allowed; opacity: .45; }
+        .food-listing-categories { display: flex; align-items: center; gap: 5px; overflow-x: auto; padding: 0 2px 2px; scrollbar-width: thin; }
+        .food-listing-categories button { flex: 0 0 auto; padding: 5px 9px; border: 1px solid #e4ece6; border-radius: 99px; background: #fff; color: #566a5f; font-size: .54rem; cursor: pointer; }
+        .food-listing-categories button:hover, .food-listing-categories button.is-selected { border-color: #168464; background: #168464; color: #fff; }
+        .food-listing-layout { display: grid; grid-template-columns: minmax(130px, .7fr) minmax(0, 3.1fr) minmax(138px, .82fr); align-items: start; gap: 8px; }
+        .food-filter-panel, .food-listing-aside-card { min-width: 0; padding: 9px; border: 1px solid #e3ece5; border-radius: 12px; background: #fff; }
+        .food-filter-panel { display: grid; gap: 8px; }
+        .food-filter-panel h2, .food-listing-aside-card h2 { margin: 0; color: #40594a; font-size: .65rem; font-weight: 800; }
+        .food-filter-panel details { padding-bottom: 7px; border-bottom: 1px solid #edf1ed; }
+        .food-filter-panel summary { margin-bottom: 5px; color: #4a6654; font-size: .57rem; font-weight: 800; cursor: pointer; }
+        .food-filter-panel details label { display: flex; align-items: center; gap: 5px; margin: 5px 0; color: #68796e; font-size: .51rem; line-height: 1.35; cursor: pointer; }
+        .food-filter-panel input { width: 12px; height: 12px; flex: 0 0 12px; margin: 0; accent-color: #168464; }
+        .food-filter-panel > details > select { width: 100%; padding: 5px 6px; border: 1px solid #e3ebe5; border-radius: 7px; background: #fff; color: #536c5c; font-size: .5rem; }
+        .food-score-options { display: flex; gap: 3px; }
+        .food-score-options button { width: 21px; height: 21px; padding: 0; border: 0; border-radius: 5px; color: #fff; font-size: .56rem; font-weight: 800; cursor: pointer; opacity: .8; }
+        .food-score-options button:nth-child(1) { background: #168b58; }.food-score-options button:nth-child(2) { background: #70ae4e; }.food-score-options button:nth-child(3) { background: #f0c64c; }.food-score-options button:nth-child(4) { background: #ec8c3d; }.food-score-options button:nth-child(5) { background: #df554e; }
+        .food-score-options button.is-selected { outline: 2px solid #375d49; outline-offset: 1px; opacity: 1; }
+        .food-filter-reset { min-height: 25px; border: 0; border-radius: 99px; background: #13775b; color: #fff; font-size: .53rem; font-weight: 700; cursor: pointer; }
+        .food-listing-main { min-width: 0; padding-bottom: 64px; }
+        .food-listing-toolbar { min-height: 26px; display: flex; align-items: center; justify-content: space-between; gap: 8px; padding: 0 2px 5px; color: #536c5c; font-size: .55rem; }
+        .food-listing-toolbar label { display: flex; align-items: center; gap: 4px; color: #77877d; }
+        .food-listing-toolbar select { max-width: 115px; padding: 3px 6px; border: 1px solid #e2ebe4; border-radius: 7px; background: #fff; color: #506c5a; font-size: .52rem; }
+        .food-browser-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 7px; }
+        .food-listing-card { min-width: 0; position: relative; display: flex; flex-direction: column; padding: 7px; border: 1px solid #e6ece7; border-radius: 10px; background: #fff; box-shadow: 0 2px 7px rgba(41,81,56,.035); }
+        .food-listing-card:hover { border-color: #a5ceb0; box-shadow: 0 4px 13px rgba(41,81,56,.09); transform: translateY(-1px); }
+        .food-listing-image { height: 76px; position: relative; display: grid; place-items: center; overflow: hidden; border-radius: 7px; background: linear-gradient(145deg,#f5f8f3,#edf5ed); }
+        .food-listing-image img { width: 100%; height: 100%; object-fit: contain; }
+        .food-listing-placeholder { font-size: 2.2rem; }
+        .food-listing-card h3 { min-height: 27px; margin: 5px 0 1px; overflow: hidden; color: #42584b; font-size: .59rem; line-height: 1.35; }
+        .food-listing-brand { overflow: hidden; color: #839087; font-size: .49rem; text-overflow: ellipsis; white-space: nowrap; }
+        .food-allergy-warning { margin: 5px 0 0; padding: 5px 6px; border: 1px solid #f0c2bd; border-radius: 6px; background: #fff0ed; color: #a52e28; font-size: .48rem; font-weight: 800; line-height: 1.35; overflow-wrap: anywhere; }
+        .food-allergy-warning.is-unknown { border-color: #ead9a6; background: #fff8df; color: #765a17; }
+        .food-sample-note { display: block; margin-top: 3px; color: #987b4c; font-size: .43rem; line-height: 1.3; }
+        .food-listing-nutri { display: flex; align-items: center; gap: 5px; margin-top: 4px; }
+        .food-listing-score { display: grid; width: 17px; height: 17px; place-items: center; border-radius: 4px; background: #e8f4e9; color: #168b58; font-size: .59rem; font-weight: 900; }
+        .food-listing-energy { color: #3e5548; font-size: .57rem; font-weight: 800; }
+        .food-listing-serving { color: #88948d; font-size: .44rem; }
+        .food-listing-nutrients { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 5px; }
+        .food-listing-nutrients span { padding: 2px 4px; border-radius: 99px; background: #edf6ee; color: #5b8064; font-size: .43rem; }
+        .food-listing-nutrients span.is-high { background: #fff0e9; color: #ba654e; }
+        .food-listing-actions { display: flex; align-items: center; gap: 4px; margin-top: auto; padding-top: 6px; }
+        .food-listing-compare { min-height: 22px; flex: 1; border: 0; border-radius: 99px; background: #d8efd5; color: #32664b; font-size: .49rem; font-weight: 800; cursor: pointer; }
+        .food-listing-compare:hover, .food-listing-compare.is-selected { background: #14805f; color: #fff; }
+        .food-listing-aside { display: grid; gap: 7px; }
+        .food-listing-aside-card { position: relative; overflow: hidden; }
+        .food-aside-summary { min-height: 117px; padding-top: 10px; text-align: center; }
+        .food-aside-summary h2 { text-align: left; }
+        .food-aside-illustration { margin: 8px 0 2px; font-size: 2.6rem; }
+        .food-aside-summary p { margin: 0; color: #556d5c; font-size: .55rem; font-weight: 700; }
+        .food-aside-summary > span { color: #8a968e; font-size: .46rem; }
+        .food-aside-tip { min-height: 90px; background: linear-gradient(135deg,#edf7e9,#e2f1dd); }
+        .food-aside-tip p { margin: 6px 0 0; color: #647d67; font-size: .5rem; line-height: 1.5; }
+        .food-show-more { display: block; margin: 9px auto 0; padding: 6px 15px; border: 1px solid #cfe4d3; border-radius: 99px; background: #f1f8f1; color: #34704d; font-size: .57rem; font-weight: 700; cursor: pointer; }
+        .food-compare-tray { position: fixed; z-index: 12; right: max(12px, calc((100vw - 1300px)/2)); bottom: 10px; left: max(196px, calc((100vw - 1300px)/2)); min-height: 44px; display: flex; align-items: center; gap: 8px; padding: 5px 9px; border: 1px solid #dfeadf; border-radius: 13px; background: rgba(255,255,255,.97); box-shadow: 0 5px 20px rgba(34,74,49,.16); backdrop-filter: blur(8px); }
+        .food-compare-tray[hidden] { display: none; }
+        .food-compare-label { min-width: 0; flex: 1; display: flex; align-items: center; gap: 9px; color: #42644e; font-size: .55rem; }
+        .food-compare-label > span { overflow: hidden; color: #7d8c81; text-overflow: ellipsis; white-space: nowrap; }
+        .food-compare-tray > button { padding: 6px 10px; border: 0; border-radius: 99px; background: #edf5ed; color: #567461; font-size: .52rem; font-weight: 700; cursor: pointer; }
+        .food-compare-tray > #foodCompareButton { background: #126d53; color: #fff; }
+        .food-compare-tray > #foodCompareButton:disabled { cursor: not-allowed; opacity: .48; }
+        .food-compare-dialog { width: min(650px, calc(100% - 24px)); max-height: 85vh; padding: 18px; border: 1px solid #deebe0; border-radius: 17px; color: #405649; box-shadow: 0 18px 60px rgba(22,59,39,.2); }
+        .food-compare-dialog::backdrop { background: rgba(18,45,32,.48); backdrop-filter: blur(3px); }
+        .food-compare-dialog h2 { margin: 0 0 12px; font-size: 1rem; }
+        .food-compare-dialog table { width: 100%; border-collapse: collapse; font-size: .72rem; }
+        .food-compare-dialog th, .food-compare-dialog td { padding: 8px; border-bottom: 1px solid #eaf0eb; text-align: center; }
+        .food-compare-dialog th:first-child, .food-compare-dialog td:first-child { text-align: left; }
+        .food-compare-close { display: block; margin: 12px 0 0 auto; padding: 7px 17px; border: 0; border-radius: 99px; background: #126d53; color: #fff; cursor: pointer; }
+        @media (min-width: 1101px) {
+            .food-home { gap: 12px; }
+            .food-hero { min-height: 188px; }
+            .food-hero-eyebrow { font-size: .7rem; }
+            .food-hero-copy > p { font-size: .88rem; }
+            .food-search input { font-size: .77rem; }
+            .food-search button { font-size: .73rem; }
+            .food-hero-tags { font-size: .68rem; }
+            .food-hero-tags button { font-size: .65rem; }
+            .food-shortcuts { gap: 9px; }
+            .food-shortcut { min-height: 58px; }
+            .food-shortcut strong { font-size: .67rem; }
+            .food-shortcut small { font-size: .55rem; }
+            .food-section-heading { min-height: 24px; }
+            .food-section-heading h2 { font-size: 1rem; }
+            .food-section-heading > a, .food-panel-title > a { font-size: .67rem; }
+            .food-overview-grid { gap: 10px; }
+            .food-panel { padding: 12px 14px; }
+            .food-panel h3 { font-size: .82rem; }
+            .food-panel-title > span { font-size: .62rem; }
+            .food-legend li { font-size: .57rem; }
+            .food-legend li strong { font-size: .63rem; }
+            .food-chart-y { font-size: .54rem; }
+            .food-chart-column { font-size: .58rem; }
+            .food-lower-grid { gap: 10px; }
+            .food-sort-label, .food-sort-label select { font-size: .61rem; }
+            .food-alert-item strong { font-size: .57rem; }
+            .food-alert-item p { font-size: .51rem; }
+            .food-listing-hero { min-height: 140px; }
+            .food-listing-eyebrow { font-size: .62rem; }
+            .food-listing-hero h1 { font-size: 1.55rem; }
+            .food-listing-hero p { font-size: .72rem; }
+            .food-listing-categories button { padding: 6px 11px; font-size: .62rem; }
+            .food-filter-panel h2, .food-listing-aside-card h2 { font-size: .73rem; }
+            .food-filter-panel summary { font-size: .64rem; }
+            .food-filter-panel details label { font-size: .58rem; }
+            .food-filter-panel > details > select, .food-listing-toolbar, .food-listing-toolbar select { font-size: .59rem; }
+            .food-listing-image { height: 90px; }
+            .food-listing-card h3 { font-size: .67rem; }
+            .food-listing-brand { font-size: .56rem; }
+            .food-listing-energy { font-size: .64rem; }
+            .food-listing-serving { font-size: .52rem; }
+            .food-listing-nutrients span, .food-listing-compare { font-size: .52rem; }
+            .food-search-suggestions, .food-search-suggestions button { font-size: .68rem; }
+            .food-search-results-heading { font-size: .78rem; }
+            .food-search-results-heading span, .food-search-pagination { font-size: .65rem; }
+        }
+        @media (max-width: 1100px) {
+            .sidebar { width: 162px; flex-basis: 162px; }
+            .side-link { font-size: .67rem; }
+            .food-shortcuts { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+            .food-overview-grid { grid-template-columns: minmax(180px, .85fr) minmax(260px, 1.15fr); }
+        }
+        @media (max-width: 700px) {
+            .dashboard-shell { padding-bottom: calc(70px + env(safe-area-inset-bottom)); }
+            .sidebar { right: 8px; bottom: calc(7px + env(safe-area-inset-bottom)); left: 8px; width: auto; height: 60px; overflow: visible; padding: 5px; }
+            .side-nav { display: flex; justify-content: space-around; }
+            .side-link { min-height: 46px; font-size: .58rem; }
+            .side-link:not([data-dashboard-nav="home"]):not([data-food-nav="choose"]):not([data-food-nav="search"]):not([data-food-nav="nutrition"]):not([data-food-nav="categories"]):not([data-food-nav="alerts"]):not([data-food-nav="warnings"]) { display: none; }
+            .paw-brand, .side-divider, .sidebar-art { display: none; }
+            .dashboard-header { min-height: 54px; }
+            .dashboard-content { padding: 0 10px 14px; }
+            .food-home { gap: 8px; }
+            .food-hero { min-height: 185px; padding: 14px; border-radius: 14px; }
+            .food-hero-copy { width: 100%; max-width: 74%; }
+            .food-hero h1 { font-size: 1.55rem; }
+            .food-hero-copy > p { max-width: 240px; font-size: .63rem; }
+            .food-hero-tags { flex-wrap: wrap; max-width: 100%; gap: 4px; font-size: .5rem; }
+            .food-hero-tags button { font-size: .48rem; }
+            .food-hero-art { right: -13%; width: 48%; opacity: .9; }
+            .food-basket { right: 12%; bottom: 40px; transform: scale(.72); transform-origin: bottom right; }
+            .food-basket-base { right: 10%; bottom: 35px; transform: scale(.75); transform-origin: bottom right; }
+            .food-art-leaf--one { right: 0; bottom: 54px; font-size: 3rem; }
+            .food-art-leaf--two { left: -10px; bottom: 49px; font-size: 2.8rem; }
+            .food-shortcuts { grid-template-columns: repeat(4, minmax(0,1fr)); gap: 5px; }
+            .food-shortcut { min-height: 50px; grid-template-columns: 19px minmax(0,1fr) 6px; gap: 3px; padding: 4px; }
+            .food-shortcut > span { font-size: .8rem; }
+            .food-shortcut strong { font-size: .48rem; }
+            .food-shortcut small { font-size: .42rem; }
+            .food-section-heading h2 { font-size: .83rem; }
+            .food-overview-grid { grid-template-columns: 1fr 1fr; gap: 6px; }
+            .food-panel { padding: 9px; border-radius: 11px; }
+            .nutrition-summary { grid-column: 1 / -1; }
+            .food-donut-wrap { justify-content: flex-start; gap: 20px; }
+            .food-donut { width: 82px; height: 82px; flex-basis: 82px; }
+            .food-donut > div { width: 58px; height: 58px; }
+            .food-lower-grid { grid-template-columns: 1fr; gap: 7px; }
+            .food-side-panels { grid-template-columns: 1fr 1fr; }
+            .food-browser-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+            .food-search-results-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; }
+            .food-search-results { padding: 8px; }
+            .food-search-hero { padding: 22px 10px; }
+            .food-listing-layout { grid-template-columns: minmax(110px, .72fr) minmax(0, 2fr); }
+            .food-listing-aside { grid-column: 1 / -1; grid-template-columns: repeat(3, minmax(0,1fr)); }
+            .food-listing-art { right: -1%; opacity: .72; }
+            .food-compare-tray { right: 8px; bottom: calc(75px + env(safe-area-inset-bottom)); left: 8px; min-height: 40px; }
+            .food-compare-label { display: grid; gap: 0; }
+            .food-sort-label { font-size: .48rem; }
+            .food-sort-label select { max-width: 100px; font-size: .49rem; }
+        }
+        @media (max-width: 380px) {
+            .food-shortcut strong { font-size: .43rem; }
+            .food-side-panels { grid-template-columns: 1fr; }
+            .food-listing-layout { grid-template-columns: minmax(92px, .7fr) minmax(0, 1.6fr); gap: 5px; }
+            .food-listing-categories { margin-inline: -2px; }
+            .food-listing-categories button { padding-inline: 8px; }
+            .food-listing-art { right: -12%; font-size: 2.8rem; opacity: .55; }
+            .food-listing-hero { min-height: 116px; padding: 12px; }
+            .food-listing-hero > div:first-child { width: 88%; }
+            .food-listing-hero h1 { font-size: 1.08rem; }
+            .food-listing-hero p { max-width: 235px; font-size: .52rem; }
+            .food-listing-eyebrow { font-size: .46rem; }
+            .food-listing-aside { grid-column: 1 / -1; grid-template-columns: 1fr 1fr; }
+            .food-listing-aside-card:last-child { display: none; }
+            .food-filter-panel { padding: 7px; }
+            .food-filter-panel details label { font-size: .46rem; }
+            .food-browser-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 5px; }
+            .food-listing-image { height: 62px; }
+            .food-listing-card { padding: 5px; }
+            .food-listing-card h3 { font-size: .52rem; }
+            .food-compare-tray { gap: 4px; padding: 4px 6px; }
+            .food-compare-tray > button { padding: 6px; font-size: .46rem; }
+            .food-hero-copy { max-width: 82%; }
+            .food-hero-art { right: -23%; opacity: .65; }
+        }
+        body { background: #edf8ef; }
+        .sidebar { border-right-color: #ccebd5; background: #f9fff9; }
+        .paw-brand, .side-link.is-active .side-icon { color: #087a50; }
+        .paw-brand-tagline, .side-link { color: #426653; }
+        .side-link:hover, .side-link.is-active { background: #087a50; color: #fff; }
+        .side-icon, .food-shortcut > span { color: #07965e; }
+        .sidebar-art { color: #159b58; }
+        .dashboard-header { background: #f1faf3; }
+        .search-box { border-color: #ccebd5; }
+        .food-hero {
+            background:
+                radial-gradient(circle at 74% 40%, rgba(116, 237, 156, .35), transparent 25%),
+                radial-gradient(circle at 91% 87%, rgba(184, 238, 92, .2), transparent 25%),
+                linear-gradient(112deg, #087b50 0%, #079866 58%, #08734f 100%);
+            box-shadow: 0 9px 22px rgba(8, 117, 75, .2);
+        }
+        .food-hero-eyebrow { background: rgba(149, 255, 180, .2); color: #c8ffd5; }
+        .food-hero-copy > p { color: #effff2; }
+        .food-search { border-color: #b6e4c4; box-shadow: 0 3px 12px rgba(3, 73, 48, .12); }
+        .food-search button { background: #078655; }
+        .food-search button:hover { background: #056b45; }
+        .food-hero-tags { color: #edfff1; }
+        .food-hero-tags button { border-color: rgba(226, 255, 231, .36); background: rgba(226, 255, 231, .2); }
+        .food-hero-tags button:hover { background: rgba(226, 255, 231, .32); }
+        .food-basket { border-color: #ffce58; background: linear-gradient(145deg, #ffd36b, #f3a52d); }
+        .food-basket::before { border-color: #ffcc58; }
+        .food-basket-base { background: #e99b26; }
+        .food-art-leaf { color: #87e34f; }
+        .food-art-leaf--two { color: #a4ed54; }
+        .food-art-spark { color: #fff06a; }
+        .food-shortcut { border-color: #d3ebd7; box-shadow: 0 3px 9px rgba(16, 104, 57, .07); }
+        .food-shortcut:hover, .food-shortcut.is-current { border-color: #72c88a; background: #eaffee; }
+        .food-shortcut small, .food-listing-brand { color: #657f6c; }
+        .food-section-icon { background: #16a66a; }
+        .food-section-heading h2, .food-panel h3 { color: #244e38; }
+        .food-section-heading > a, .food-panel-title > a { color: #07804f; }
+        .food-panel, .food-listing-card, .food-listing-aside-card, .food-filter-panel {
+            border-color: #d4ead8;
+            box-shadow: 0 4px 13px rgba(24, 105, 58, .07);
+        }
+        .food-panel { background: #fff; }
+        .food-donut { background: conic-gradient(#15ae6b 0 40%, #ffc247 40% 72%, #f06472 72% 100%); }
+        .legend-dot--green { background: #15ae6b; }
+        .legend-dot--yellow { background: #ffc247; }
+        .legend-dot--pink { background: #f06472; }
+        .food-bar { background: #14a96a; }
+        .food-bar--sugar { background: #ffb82e; }
+        .food-bar--fat { background: #15b7a4; }
+        .food-alert-item { background: #fff3e5; }
+        .food-alert-item:nth-of-type(3) { background: #fff7dc; }
+        .food-alert-item:nth-of-type(4) { background: #e9f9e9; }
+        .food-alert-bell { color: #ee6855; }
+        .food-aside-tip { background: #e7f8e6; }
+        .food-listing-hero { background: radial-gradient(circle at 78% 36%, rgba(117, 235, 151, .35), transparent 25%), linear-gradient(110deg,#087b50,#0a9564 58%,#08734f); }
+        .food-listing-hero p { color: #edfff1; }
+        .food-listing-categories button { border-color: #d0e9d5; color: #416c50; }
+        .food-listing-categories button:hover, .food-listing-categories button.is-selected { border-color: #078755; background: #078755; color: #fff; }
+        .food-filter-panel h2, .food-listing-aside-card h2 { color: #28523b; }
+        .food-filter-panel summary { color: #3e704e; }
+        .food-filter-reset { background: #078755; }
+        .food-browser-grid .food-listing-image { background: linear-gradient(145deg,#effaee,#e2f5e3); }
+        .food-listing-card:hover { border-color: #79c58c; box-shadow: 0 6px 16px rgba(18, 123, 62, .14); }
+        .food-listing-score { background: #dcf4df; color: #07894e; }
+        .food-listing-nutrients span { background: #def5df; color: #397d4a; }
+        .food-listing-nutrients span.is-high { background: #ffe4d8; color: #bd4d35; }
+        .food-listing-compare { background: #d7f4ce; color: #286443; }
+        .food-listing-compare:hover, .food-listing-compare.is-selected { background: #078755; color: #fff; }
+        .food-search-hero { border-color: #ccebd2; background: radial-gradient(circle at 85% 25%, #c9f1c4, transparent 30%), linear-gradient(135deg,#f3fff2,#e3f7e7); }
+        .food-search-hero > span { color: #087d4d; }
+        .food-search-hero h1 { color: #1d5938; }
+        .food-search-suggestions button { border-color: #cce8d1; background: #fff; color: #286644; }
+        .food-search-suggestions button:hover { border-color: #63ba7a; background: #e9f9e9; }
+        .food-search-results { border-color: #d1ead6; }
+        .food-search-pagination button { border-color: #cce8d1; background: #f1fbf2; color: #087448; }
+        .food-compare-tray { border-color: #c4e7ca; box-shadow: 0 6px 22px rgba(17, 103, 54, .2); }
+        .food-compare-tray > button { background: #e5f6e5; color: #386e4d; }
+        .food-compare-tray > #foodCompareButton, .food-compare-close { background: #078755; }
+        .food-compare-dialog { border-color: #cce8d1; }
+        .allergy-view { display: grid; gap: 12px; max-width: 1440px; margin: 0 auto; scroll-margin-top: 12px; }
+        .food-overview-view[hidden], .food-listing-view[hidden], .food-search-view[hidden], .allergy-view[hidden], .nutrition-warning-view[hidden], .food-show-more[hidden] { display: none; }
+        .allergy-hero { min-height: 136px; position: relative; display: flex; align-items: center; overflow: hidden; padding: 18px clamp(18px,3vw,34px); border-radius: 17px; color: #fff; background: radial-gradient(circle at 78% 40%,rgba(180,255,86,.32),transparent 25%),linear-gradient(112deg,#07834e,#0aaa68 60%,#08794c); box-shadow: 0 8px 20px rgba(8,117,75,.18); }
+        .allergy-hero-copy { position: relative; z-index: 1; width: min(720px,74%); }
+        .allergy-hero-eyebrow { color: #d7ffe0; font-size: .68rem; font-weight: 800; }
+        .allergy-hero h1 { margin: 2px 0; color: #fff; font-size: clamp(1.35rem,2.4vw,2rem); font-weight: 900; }
+        .allergy-hero p { margin: 0 0 8px; color: #f0fff2; font-size: .68rem; }
+        .allergy-hero-art { position: absolute; right: 7%; bottom: 8px; display: flex; align-items: center; gap: 10px; font-size: clamp(2.4rem,5vw,4.2rem); filter: drop-shadow(0 4px 5px rgba(0,0,0,.12)); }
+        .allergy-hero-art span:first-child { transform: rotate(-12deg); }
+        .allergy-hero-search { max-width: 520px; min-height: 34px; }
+        .allergy-hero-search button { min-width: 74px; }
+        .allergy-main-grid { display: grid; grid-template-columns: minmax(0,1.65fr) minmax(230px,.85fr); gap: 10px; align-items: start; }
+        .allergy-primary, .allergy-aside { min-width: 0; display: grid; gap: 10px; }
+        .allergy-card { min-width: 0; padding: 12px; border: 1px solid #d5ead9; border-radius: 13px; background: #fff; box-shadow: 0 4px 13px rgba(24,105,58,.07); }
+        .allergy-card-title { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .allergy-card-title h2 { margin: 0; color: #245139; font-size: .78rem; font-weight: 850; }
+        .allergy-card-title > span { color: #6a8571; font-size: .56rem; }
+        .allergy-danger { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: center; gap: 10px; padding: 12px 14px; border: 1px solid #ffc9bd; border-radius: 14px; background: linear-gradient(110deg,#fff1ed,#ffe7e2); }
+        .allergy-danger-copy { display: flex; align-items: center; gap: 12px; }
+        .allergy-danger-icon { display: grid; width: 52px; height: 52px; flex: 0 0 52px; place-items: center; border-radius: 50%; background: #ffddd5; font-size: 1.8rem; }
+        .allergy-danger h2 { margin: 0 0 3px; color: #c83832; font-size: .9rem; }
+        .allergy-danger p { margin: 0; color: #76554e; font-size: .59rem; line-height: 1.5; }
+        .allergy-selected-chip { display: inline-flex; align-items: center; gap: 5px; margin-top: 6px; padding: 4px 10px; border-radius: 99px; background: #ffd5cc; color: #a52b27; font-size: .61rem; font-weight: 800; }
+        .allergy-selected-chip[hidden] { display: none; }
+        .allergy-danger-action { padding: 7px 12px; border: 0; border-radius: 99px; background: #ed5b51; color: #fff; font-size: .58rem; font-weight: 800; cursor: pointer; white-space: nowrap; }
+        .allergy-detail-grid { display: grid; grid-template-columns: minmax(0,1.4fr) minmax(210px,1fr); gap: 8px; }
+        .allergy-option-grid { display: grid; grid-template-columns: repeat(5,minmax(0,1fr)); gap: 6px; }
+        .allergy-option { min-width: 0; min-height: 58px; display: grid; justify-items: center; align-content: center; gap: 2px; padding: 5px 3px; border: 1px solid #f1d8ce; border-radius: 10px; background: #fff8f4; color: #604d43; cursor: pointer; }
+        .allergy-option:hover { border-color: #ee9f83; background: #fff0e8; }
+        .allergy-option[aria-pressed="true"] { border-color: #ed6d59; background: #ffe3d9; box-shadow: inset 0 0 0 1px #ed6d59; color: #a33b2f; }
+        .allergy-option-emoji { font-size: 1.3rem; line-height: 1.15; }
+        .allergy-option strong { overflow: hidden; max-width: 100%; font-size: .51rem; text-overflow: ellipsis; white-space: nowrap; }
+        .allergy-option small { color: #8a786d; font-size: .43rem; }
+        .allergy-confirm-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 8px; }
+        .allergy-draft-status { min-height: 1.2em; flex: 1; margin: 0; color: #8a786d; font-size: .52rem; }
+        .allergy-confirm-button { min-height: 32px; padding: 6px 12px; border: 0; border-radius: 8px; background: #168464; color: #fff; font-size: .58rem; font-weight: 800; cursor: pointer; }
+        .allergy-confirm-button:disabled { cursor: not-allowed; opacity: .48; }
+        .allergy-clear-button { min-height: 32px; padding: 6px 10px; border: 1px solid #e8c9c4; border-radius: 8px; background: #fff7f5; color: #a44037; font-size: .56rem; font-weight: 700; cursor: pointer; white-space: nowrap; }
+        .allergy-clear-button:disabled { cursor: not-allowed; opacity: .48; }
+        .allergy-note { margin: 7px 0 0; color: #78867c; font-size: .52rem; line-height: 1.5; }
+        .allergy-symptoms { display: grid; gap: 6px; }
+        .allergy-symptom { display: grid; grid-template-columns: 25px minmax(0,1fr); align-items: center; gap: 6px; padding: 6px; border-radius: 9px; background: #fff5f0; }
+        .allergy-symptom-icon { display: grid; width: 24px; height: 24px; place-items: center; border-radius: 50%; background: #fff; font-size: .83rem; }
+        .allergy-symptom strong { display: block; color: #6a5148; font-size: .52rem; }
+        .allergy-symptom small { display: block; color: #87766e; font-size: .45rem; line-height: 1.35; }
+        .allergy-tip-card { background: linear-gradient(135deg,#f0ffeb,#ddf7d8); }
+        .allergy-tip-list { display: grid; gap: 7px; margin: 0; padding: 0; list-style: none; }
+        .allergy-tip-list li { display: grid; grid-template-columns: 18px minmax(0,1fr); gap: 6px; color: #506b55; font-size: .54rem; line-height: 1.45; }
+        .allergy-tip-check { display: grid; width: 16px; height: 16px; place-items: center; border-radius: 50%; background: #62c85d; color: #fff; font-size: .55rem; font-weight: 900; }
+        .allergy-emergency { position: relative; overflow: hidden; border-color: #ffc9c1; background: linear-gradient(135deg,#fff4ef,#ffe5df); }
+        .allergy-emergency p { margin: 5px 0 8px; color: #705550; font-size: .55rem; line-height: 1.5; }
+        .allergy-call { display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; border-radius: 99px; background: #ed5b51; color: #fff; font-size: .65rem; font-weight: 900; text-decoration: none; }
+        .allergy-profile { background: linear-gradient(135deg,#e9ffdf,#d2f5c7); }
+        .allergy-profile-count { display: flex; align-items: center; gap: 8px; margin: 8px 0 6px; color: #3c6348; font-size: .57rem; }
+        .allergy-profile-count strong { display: grid; width: 27px; height: 27px; place-items: center; border-radius: 50%; background: #6acb62; color: #fff; font-size: .76rem; }
+        .allergy-profile-tags { display: flex; flex-wrap: wrap; gap: 4px; }
+        .allergy-profile-tags span { padding: 3px 7px; border-radius: 99px; background: #fff; color: #527256; font-size: .49rem; }
+        .allergy-profile-tags .allergy-none { color: #78867c; }
+        .allergy-menu-grid { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 7px; }
+        .allergy-menu-card { min-width: 0; display: grid; justify-items: center; gap: 3px; padding: 7px 4px; border: 1px solid #dcefe0; border-radius: 10px; background: #f6fff5; text-align: center; }
+        .allergy-menu-card > span { display: grid; width: 48px; height: 40px; place-items: center; border-radius: 50%; background: #e3f4db; font-size: 1.65rem; }
+        .allergy-menu-card strong { color: #425d49; font-size: .53rem; }
+        .allergy-menu-card small { color: #7d8b7f; font-size: .44rem; }
+        .allergy-footer-note { margin: 0; padding: 8px 11px; border-radius: 9px; background: #edfae8; color: #5b775e; font-size: .5rem; line-height: 1.5; }
+        @media (max-width: 900px) and (min-width: 701px) {
+            .allergy-main-grid { grid-template-columns: minmax(0,1.4fr) minmax(210px,.8fr); gap: 7px; }
+            .allergy-detail-grid { grid-template-columns: 1fr; }
+            .allergy-option-grid { grid-template-columns: repeat(5,minmax(0,1fr)); }
+        }
+        @media (max-width: 700px) {
+            .allergy-view { gap: 8px; }
+            .allergy-hero { min-height: 145px; padding: 14px; }
+            .allergy-hero-copy { width: 82%; }
+            .allergy-hero-art { right: -2%; opacity: .8; }
+            .allergy-main-grid, .allergy-detail-grid { grid-template-columns: 1fr; gap: 7px; }
+            .allergy-primary, .allergy-aside { gap: 7px; }
+            .allergy-card { padding: 9px; }
+            .allergy-danger { grid-template-columns: 1fr; }
+            .allergy-danger-action { justify-self: start; margin-left: 64px; }
+            .allergy-option-grid { grid-template-columns: repeat(4,minmax(0,1fr)); }
+            .allergy-menu-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+            .allergy-card-title h2 { font-size: .72rem; }
+        }
+        .nutrition-warning-view { display: grid; gap: 12px; max-width: 1440px; margin: 0 auto; scroll-margin-top: 12px; }
+        .warning-hero { min-height: 136px; position: relative; display: flex; align-items: center; overflow: hidden; padding: 18px clamp(18px,3vw,34px); border-radius: 17px; color: #fff; background: radial-gradient(circle at 78% 40%,rgba(255,230,92,.35),transparent 25%),linear-gradient(112deg,#a94617,#e47a1d 60%,#c6531d); box-shadow: 0 8px 20px rgba(176,82,20,.18); }
+        .warning-hero-copy { position: relative; z-index: 1; width: min(720px,74%); }
+        .warning-hero-eyebrow { color: #fff0c8; font-size: .68rem; font-weight: 800; }
+        .warning-hero h1 { margin: 2px 0; color: #fff; font-size: clamp(1.35rem,2.4vw,2rem); font-weight: 900; }
+        .warning-hero p { margin: 0 0 8px; color: #fff5e4; font-size: .68rem; }
+        .warning-hero-art { position: absolute; right: 7%; bottom: 8px; font-size: clamp(2.6rem,5vw,4.4rem); filter: drop-shadow(0 4px 5px rgba(0,0,0,.12)); }
+        .warning-hero-search { max-width: 520px; min-height: 34px; }
+        .warning-hero-search button { min-width: 74px; }
+        .warning-overview { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 9px; }
+        .warning-stat { min-width: 0; display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid #f0dfc9; border-radius: 12px; background: #fff; box-shadow: 0 3px 10px rgba(112,72,29,.05); }
+        .warning-stat-icon { display: grid; width: 35px; height: 35px; flex: 0 0 35px; place-items: center; border-radius: 10px; background: #fff1d9; font-size: 1.15rem; }
+        .warning-stat strong { display: block; color: #59402d; font-size: .88rem; line-height: 1.1; }
+        .warning-stat span:last-child { display: block; margin-top: 2px; color: #8c7865; font-size: .52rem; }
+        .warning-stat--sugar .warning-stat-icon { background: #fff0dc; }
+        .warning-stat--fat .warning-stat-icon { background: #ffe8de; }
+        .warning-stat--energy .warning-stat-icon { background: #fff5d8; }
+        .warning-stat--missing .warning-stat-icon { background: #e9f2ff; }
+        .warning-layout { display: grid; grid-template-columns: minmax(0,1fr) 245px; align-items: start; gap: 10px; }
+        .warning-results, .warning-sidebar-card { min-width: 0; padding: 12px; border: 1px solid #eddfce; border-radius: 13px; background: #fff; box-shadow: 0 4px 13px rgba(112,72,29,.06); }
+        .warning-results-heading { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 8px; }
+        .warning-results-heading h2, .warning-sidebar-card h2 { margin: 0; color: #563d2b; font-size: .78rem; font-weight: 850; }
+        .warning-results-heading span { color: #8a7766; font-size: .56rem; }
+        .warning-controls { display: grid; gap: 8px; margin-bottom: 10px; }
+        .warning-search-box { min-height: 34px; display: flex; align-items: center; gap: 7px; padding: 5px 10px; border: 1px solid #eddfce; border-radius: 9px; background: #fffdf9; color: #8d7863; }
+        .warning-search-box input { width: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: #513f30; font: inherit; font-size: .61rem; }
+        .warning-filter-list { display: flex; flex-wrap: wrap; gap: 5px; }
+        .warning-filter { padding: 5px 9px; border: 1px solid #eddfce; border-radius: 99px; background: #fff; color: #755e49; font-size: .55rem; cursor: pointer; }
+        .warning-filter:hover { border-color: #e5a56a; background: #fff8eb; }
+        .warning-filter.is-selected { border-color: #d66b25; background: #d66b25; color: #fff; }
+        .warning-product-grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 7px; }
+        .warning-product-grid .food-listing-card { border-color: #eddfce; }
+        .warning-product-grid .food-listing-image { background: linear-gradient(145deg,#fff8eb,#ffefd8); }
+        .warning-product-flags { display: flex; flex-wrap: wrap; gap: 3px; margin-top: 6px; }
+        .warning-product-flags span { padding: 3px 6px; border-radius: 99px; background: #fff0dd; color: #9c511b; font-size: .46rem; font-weight: 800; }
+        .warning-product-flags span.is-high { background: #ffe4dc; color: #b84434; }
+        .warning-product-flags span.is-missing { background: #eaf1fa; color: #4a6582; }
+        .warning-empty { grid-column: 1 / -1; margin: 0; padding: 22px 10px; color: #7d756b; font-size: .62rem; text-align: center; }
+        .warning-sidebar { display: grid; gap: 8px; }
+        .warning-sidebar-card { padding: 10px; }
+        .warning-rule-list { display: grid; gap: 7px; margin-top: 9px; }
+        .warning-rule { display: grid; grid-template-columns: 24px minmax(0,1fr); align-items: start; gap: 6px; }
+        .warning-rule-icon { display: grid; width: 23px; height: 23px; place-items: center; border-radius: 7px; background: #fff1de; font-size: .74rem; }
+        .warning-rule strong { display: block; color: #654b36; font-size: .52rem; }
+        .warning-rule small { display: block; color: #8b7b68; font-size: .46rem; line-height: 1.4; }
+        .warning-guide-card { background: linear-gradient(135deg,#fff9e9,#fff0cf); }
+        .warning-guide-card p { margin: 7px 0 0; color: #756149; font-size: .52rem; line-height: 1.55; }
+        .warning-callout { display: grid; grid-template-columns: 25px minmax(0,1fr); gap: 7px; padding: 8px; border: 1px solid #f2dfb6; border-radius: 9px; background: #fff8e9; color: #785d37; font-size: .49rem; line-height: 1.5; }
+        .warning-callout span { font-size: .9rem; }
+        @media (max-width: 1100px) and (min-width: 701px) {
+            .warning-layout { grid-template-columns: minmax(0,1fr) 210px; }
+            .warning-product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+        }
+        @media (max-width: 700px) {
+            .nutrition-warning-view { gap: 8px; }
+            .warning-hero { min-height: 145px; padding: 14px; }
+            .warning-hero-copy { width: 84%; }
+            .warning-hero-art { right: -2%; opacity: .8; }
+            .warning-overview { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; }
+            .warning-stat { gap: 7px; padding: 8px; }
+            .warning-stat-icon { width: 29px; height: 29px; flex-basis: 29px; font-size: .95rem; }
+            .warning-layout { grid-template-columns: 1fr; gap: 7px; }
+            .warning-product-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 5px; }
+            .warning-results { padding: 9px; }
+            .warning-sidebar { grid-template-columns: 1fr 1fr; }
+            .warning-filter { padding: 5px 7px; font-size: .5rem; }
+        }
     </style>
 </head>
 <body>
     <div class="page">
         <div class="dashboard-shell is-locked" id="dashboardShell" inert>
             <aside class="sidebar">
-                <a class="paw-brand" href="#dashboardHome" aria-label="PawCare หน้าหลัก">
-                    <span class="paw-brand-mark" aria-hidden="true">🐾</span>
-                    <span class="paw-brand-name">PawCare</span>
-                    <span class="paw-brand-tagline">Smart Pet Companion ♥</span>
+                <a class="paw-brand" href="#dashboardHome" aria-label="FoodCheck หน้าหลัก">
+                    <span class="paw-brand-mark" aria-hidden="true">🥑</span>
+                    <span class="paw-brand-name">FoodCheck</span>
+                    <span class="paw-brand-tagline">กินดี มีสุขภาพดี</span>
                 </a>
                 <nav class="side-nav" aria-label="เมนูหลัก">
                     <a class="side-link is-active" href="#dashboardHome" data-dashboard-nav="home"><span class="side-icon" aria-hidden="true">⌂</span>หน้าหลัก</a>
-                    <button class="side-link" type="button" data-dashboard-nav="scanner"><span class="side-icon" aria-hidden="true">▣</span>AI Pet Scanner</button>
-                    <button class="side-link" type="button" data-dashboard-nav="care"><span class="side-icon" aria-hidden="true">▦</span>Smart Pet Care</button>
-                    <button class="side-link" type="button" data-dashboard-nav="profile"><span class="side-icon" aria-hidden="true">♧</span>My Cat Profile</button>
-                    <button class="side-link" type="button" data-dashboard-nav="history"><span class="side-icon" aria-hidden="true">◴</span>ประวัติการสแกน</button>
-                    <button class="side-link" type="button" data-dashboard-nav="notifications"><span class="side-icon" aria-hidden="true">♧</span>การแจ้งเตือน</button>
-                    <span class="side-divider" aria-hidden="true"></span>
-                    <button class="side-link" id="authNavButton" type="button"><span class="side-icon" aria-hidden="true">⇥</span><span id="authNavLabel">เข้าสู่ระบบ</span></button>
+                    <a class="side-link" data-food-nav="choose" href="#food-products"><span class="side-icon" aria-hidden="true">♜</span>เลือกอาหารและเครื่องดื่ม</a>
+                    <a class="side-link" data-food-nav="search" href="#food-search"><span class="side-icon" aria-hidden="true">⌕</span>ค้นหาผลิตภัณฑ์</a>
+                    <a class="side-link" data-food-nav="nutrition" href="#nutrition-insights"><span class="side-icon" aria-hidden="true">▥</span>ข้อมูลโภชนาการ</a>
+                    <a class="side-link" data-food-nav="compare" href="#food-products"><span class="side-icon" aria-hidden="true">⇄</span>เปรียบเทียบโภชนาการ</a>
+                    <a class="side-link" data-food-nav="categories" href="#food-categories"><span class="side-icon" aria-hidden="true">▦</span>หมวดหมู่อาหาร</a>
+                    <a class="side-link" data-food-nav="alerts" href="#food-alerts"><span class="side-icon" aria-hidden="true">⚠</span>Allergy Alert</a>
+                    <a class="side-link" data-food-nav="warnings" href="#nutrition-warning"><span class="side-icon" aria-hidden="true">ⓘ</span>Nutrition Warning</a>
                 </nav>
-                <div class="sidebar-art" aria-hidden="true">ᓚᘏᗢ ♥</div>
+                <div class="sidebar-art" aria-hidden="true">🥬　🥕</div>
             </aside>
 
             <div class="dashboard-main">
                 <header class="dashboard-header">
                     <label class="search-box">
                         <span aria-hidden="true">⌕</span>
-                        <input id="dashboardSearch" type="search" placeholder="ค้นหาข้อมูลเกี่ยวกับแมว..." aria-label="ค้นหาข้อมูลเกี่ยวกับแมว" />
+                        <input id="dashboardSearch" type="search" placeholder="ค้นหาสินค้า เช่น นม ข้าวโอ๊ต..." aria-label="ค้นหาผลิตภัณฑ์อาหาร" />
                     </label>
                     <span class="header-spacer"></span>
                     <button class="icon-button" id="notificationButton" type="button" aria-label="การแจ้งเตือน">
@@ -1686,6 +2284,358 @@
                 </header>
 
                 <main class="dashboard-content" id="dashboardHome">
+                    <div class="food-home">
+                        <div class="food-overview-view">
+                        <section class="food-hero" aria-labelledby="foodHeroTitle">
+                            <div class="food-hero-copy">
+                                <span class="food-hero-eyebrow">ข้อมูลอาหารสำหรับคนที่ใส่ใจสุขภาพ</span>
+                                <h1 id="foodHeroTitle">FoodCheck</h1>
+                                <p>ค้นหา เปรียบเทียบ และดูข้อมูลโภชนาการได้ครบจบในที่เดียว</p>
+                                <form class="food-search" id="foodSearchForm" role="search">
+                                    <span aria-hidden="true">⌕</span>
+                                    <input id="foodSearchInput" type="search" placeholder="ค้นหาผลิตภัณฑ์อาหาร เช่น นม ข้าวโอ๊ต..." aria-label="ค้นหาผลิตภัณฑ์อาหาร" />
+                                    <button type="submit">ค้นหา <span aria-hidden="true">→</span></button>
+                                </form>
+                                <div class="food-hero-tags" aria-label="หมวดหมู่ยอดนิยม">
+                                    <span>ค้นหายอดนิยม:</span>
+                                    <button type="button" data-food-category="milk">นม</button>
+                                    <button type="button" data-food-category="rice">ข้าวโอ๊ต</button>
+                                    <button type="button" data-food-category="chips">ขนมขบเคี้ยว</button>
+                                    <button type="button" data-food-category="bread">ขนมปัง</button>
+                                </div>
+                            </div>
+                            <div class="food-hero-art" aria-hidden="true">
+                                <span class="food-art-spark food-art-spark--one">✦</span>
+                                <span class="food-art-spark food-art-spark--two">✧</span>
+                                <span class="food-art-leaf food-art-leaf--one">♣</span>
+                                <span class="food-art-leaf food-art-leaf--two">♣</span>
+                                <div class="food-basket">
+                                    <span>🥬</span><span>🥛</span><span>🍅</span><span>🥕</span>
+                                </div>
+                                <div class="food-basket-base"></div>
+                            </div>
+                        </section>
+
+                        <section class="food-shortcuts" aria-label="ทางลัด">
+                            <a class="food-shortcut is-current" href="#food-products"><span>▣</span><strong>เลือกอาหาร<br />ที่สนใจ</strong><i>›</i></a>
+                            <a class="food-shortcut" href="#food-products"><span>⌕</span><strong>ค้นหาผลิตภัณฑ์<br />อาหาร</strong><i>›</i></a>
+                            <a class="food-shortcut" href="#nutrition-insights"><span>▥</span><strong>ดูข้อมูล<br />โภชนาการ</strong><i>›</i></a>
+                            <a class="food-shortcut" href="#food-alerts"><span>⚠</span><strong>Allergy Alert<br /><small>แจ้งเตือนสารก่อภูมิแพ้</small></strong><i>›</i></a>
+                            <a class="food-shortcut" href="#nutrition-warning"><span>ⓘ</span><strong>Nutrition Warning<br /><small>แจ้งเตือนโภชนาการ</small></strong><i>›</i></a>
+                        </section>
+
+                        <section class="food-section-heading" id="nutrition-insights">
+                            <div><span class="food-section-icon">◉</span><h2>Dashboard สรุปโภชนาการ</h2></div>
+                            <a href="#food-products">ดูรายการเพิ่มเติม <span aria-hidden="true">→</span></a>
+                        </section>
+
+                        <section class="food-overview-grid">
+                            <article class="food-panel nutrition-summary">
+                                <h3>สรุปข้อมูลอาหาร</h3>
+                                <div class="food-donut-wrap">
+                                    <div class="food-donut" id="foodDonut"><div><strong id="foodTotalCount">—</strong><span>รายการอาหาร</span></div></div>
+                                    <ul class="food-legend">
+                                        <li><i class="legend-dot legend-dot--green"></i><span>พลังงานเฉลี่ย</span><strong id="avgEnergy">— kcal</strong></li>
+                                        <li><i class="legend-dot legend-dot--yellow"></i><span>น้ำตาลเฉลี่ย</span><strong id="avgSugar">— g</strong></li>
+                                        <li><i class="legend-dot legend-dot--pink"></i><span>ไขมันเฉลี่ย</span><strong id="avgFat">— g</strong></li>
+                                    </ul>
+                                </div>
+                            </article>
+                            <article class="food-panel nutrition-chart">
+                                <div class="food-panel-title"><h3>กราฟสรุปโภชนาการ</h3><span>ต่อ 100 กรัม</span></div>
+                                <div class="food-chart" aria-label="กราฟปริมาณโภชนาการเฉลี่ย">
+                                    <div class="food-chart-y"><span>100</span><span>75</span><span>50</span><span>25</span><span>0</span></div>
+                                    <div class="food-chart-bars" id="foodChartBars">
+                                        <div class="food-chart-column"><div class="food-bar food-bar--energy" data-chart-bar="energy"></div><span>พลังงาน<br />(kcal)</span></div>
+                                        <div class="food-chart-column"><div class="food-bar food-bar--sugar" data-chart-bar="sugar"></div><span>น้ำตาล<br />(g)</span></div>
+                                        <div class="food-chart-column"><div class="food-bar food-bar--fat" data-chart-bar="fat"></div><span>ไขมัน<br />(g)</span></div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="food-lower-grid">
+                            <div class="food-side-panels">
+                                <article class="food-panel food-alert-panel" id="food-alerts-preview">
+                                    <div class="food-panel-title"><h3><span class="food-alert-bell">♧</span> การแจ้งเตือนสำคัญ</h3><a href="#nutrition-warning">ดูทั้งหมด →</a></div>
+                                    <div class="food-alert-item"><span class="food-alert-icon">🌾</span><div><strong>ตรวจสอบสารก่อภูมิแพ้</strong><p>อ่านส่วนผสมบนฉลากก่อนเลือกซื้อ</p></div><span>›</span></div>
+                                    <div class="food-alert-item"><span class="food-alert-icon">◉</span><div><strong>เปรียบเทียบข้อมูลโภชนาการ</strong><p>ใช้ข้อมูลต่อ 100 กรัมเพื่อเทียบสินค้า</p></div><span>›</span></div>
+                                    <div class="food-alert-item"><span class="food-alert-icon">♧</span><div><strong>เลือกอาหารให้สมดุล</strong><p>พิจารณาพลังงาน น้ำตาล และไขมันร่วมกัน</p></div><span>›</span></div>
+                                </article>
+                            </div>
+                        </section>
+                        </div>
+
+                        <section class="food-listing-view" id="food-products" aria-labelledby="foodListingTitle" hidden>
+                            <header class="food-listing-hero">
+                                <div>
+                                    <span class="food-listing-eyebrow">เลือกอาหารที่สนใจ เพื่อดูข้อมูลโภชนาการแบบละเอียด</span>
+                                    <h1 id="foodListingTitle">เลือกอาหารและเครื่องดื่ม</h1>
+                                    <p>ค้นหาสินค้า ดูข้อมูลโภชนาการ และเปรียบเทียบได้ในที่เดียว</p>
+                                    <form class="food-search food-listing-search" id="foodListingSearchForm" role="search">
+                                        <span aria-hidden="true">⌕</span>
+                                        <input id="foodListingSearchInput" type="search" placeholder="ค้นหาผลิตภัณฑ์ เช่น นม ข้าวโอ๊ต..." aria-label="ค้นหาผลิตภัณฑ์อาหาร" />
+                                        <button type="submit">ค้นหา <span aria-hidden="true">→</span></button>
+                                    </form>
+                                </div>
+                                <div class="food-listing-art" aria-hidden="true">🥬🥛🍅🥕</div>
+                            </header>
+                            <div class="food-listing-categories" id="food-categories" aria-label="เลือกหมวดหมู่อาหาร">
+                                <button type="button" class="is-selected" data-food-category="all">▦ ทั้งหมด</button>
+                                <button type="button" data-food-category="milk">◉ นมและผลิตภัณฑ์นม</button>
+                                <button type="button" data-food-category="chips">◉ ขนมขบเคี้ยว</button>
+                                <button type="button" data-food-category="bread">▣ เบเกอรี่</button>
+                                <button type="button" data-food-category="rice">◉ ธัญพืช</button>
+                                <button type="button" data-food-category="juice">♡ เครื่องดื่ม</button>
+                                <button type="button" data-food-category="all">★ อาหารทั้งหมด</button>
+                            </div>
+                            <div class="food-listing-layout">
+                                <aside class="food-filter-panel" aria-label="ตัวกรองสินค้า">
+                                    <h2>⚑ ตัวกรอง</h2>
+                                    <details open>
+                                        <summary>หมวดหมู่</summary>
+                                        <label><input type="radio" name="listingCategory" value="all" checked /> เลือกหมวดหมู่ทั้งหมด</label>
+                                        <label><input type="radio" name="listingCategory" value="milk" /> นมและผลิตภัณฑ์นม</label>
+                                        <label><input type="radio" name="listingCategory" value="rice" /> ข้าวและธัญพืช</label>
+                                        <label><input type="radio" name="listingCategory" value="chips" /> ขนมขบเคี้ยว</label>
+                                        <label><input type="radio" name="listingCategory" value="bread" /> ขนมปังและเบเกอรี่</label>
+                                        <label><input type="radio" name="listingCategory" value="juice" /> เครื่องดื่ม</label>
+                                    </details>
+                                    <details open>
+                                        <summary>แบรนด์</summary>
+                                        <select id="foodListingBrand" aria-label="กรองตามแบรนด์">
+                                            <option value="all">ทุกแบรนด์</option>
+                                        </select>
+                                    </details>
+                                    <details open>
+                                        <summary>ระดับสุขภาพ</summary>
+                                        <div class="food-score-options" aria-label="กรองตาม Nutri-Score">
+                                            <button type="button" data-nutri-score="A">A</button><button type="button" data-nutri-score="B">B</button><button type="button" data-nutri-score="C">C</button><button type="button" data-nutri-score="D">D</button><button type="button" data-nutri-score="E">E</button>
+                                        </div>
+                                    </details>
+                                    <details open>
+                                        <summary>ระดับโภชนาการ</summary>
+                                        <label><input type="checkbox" data-nutrient="sugar" data-max="5" /> น้ำตาลไม่เกิน 5 g</label>
+                                        <label><input type="checkbox" data-nutrient="fat" data-max="3" /> ไขมันไม่เกิน 3 g</label>
+                                        <label><input type="checkbox" data-nutrient="energy" data-max="200" /> พลังงานไม่เกิน 200 kcal</label>
+                                        <label><input type="checkbox" data-nutrient="protein" data-min="10" /> โปรตีนอย่างน้อย 10 g</label>
+                                    </details>
+                                    <button class="food-filter-reset" id="foodFilterReset" type="button">↻ ล้างตัวกรอง</button>
+                                </aside>
+                                <div class="food-listing-main">
+                                    <div class="food-listing-toolbar">
+                                        <strong id="foodResultCount">กำลังโหลด...</strong>
+                                        <label>เรียงตาม
+                                            <select id="foodListingSort" aria-label="เรียงรายการอาหาร">
+                                                <option value="sugar">แนะนำ</option><option value="sugar">น้ำตาลน้อย</option><option value="protein">โปรตีนสูง</option><option value="fat">ไขมันน้อย</option><option value="energy">พลังงานน้อย</option>
+                                            </select>
+                                        </label>
+                                    </div>
+                                    <p class="food-load-error" id="foodLoadError" role="status" hidden></p>
+                                    <div class="food-browser-grid" id="foodBrowserGrid"><p class="food-empty-state">กำลังโหลดข้อมูลอาหาร...</p></div>
+                                    <button class="food-show-more" id="foodShowMore" type="button" hidden>ดูสินค้าเพิ่มเติม　↓</button>
+                                </div>
+                                <aside class="food-listing-aside">
+                                    <article class="food-listing-aside-card food-aside-summary">
+                                        <h2>▥ สรุปการเลือก</h2>
+                                        <div class="food-aside-illustration" aria-hidden="true">🥛</div>
+                                        <p>ยังไม่มีสินค้าที่คุณเลือก</p>
+                                        <span>กรุณาเลือกสินค้าจากรายการ</span>
+                                    </article>
+                                    <article class="food-listing-aside-card food-aside-tip">
+                                        <h2>💡 คำแนะนำ FoodCheck</h2>
+                                        <p>เลือกอาหารที่มี Nutri-Score ระดับ A หรือ B เพื่อเป็นอีกหนึ่งข้อมูลประกอบการตัดสินใจ</p>
+                                    </article>
+                                </aside>
+                            </div>
+                        </section>
+                        <section class="food-search-view" id="food-search" aria-labelledby="foodSearchTitle" hidden>
+                            <header class="food-search-hero">
+                                <span>FOODCHECK PRODUCT SEARCH</span>
+                                <h1 id="foodSearchTitle">ค้นหาผลิตภัณฑ์อาหาร</h1>
+                                <p>ค้นหาสินค้าจากฐานข้อมูล Open Food Facts และดูข้อมูลโภชนาการต่อ 100 กรัม</p>
+                                <form class="food-search food-search-form" id="foodProductSearchForm" role="search">
+                                    <span aria-hidden="true">⌕</span>
+                                    <input id="foodProductSearchInput" type="search" minlength="2" maxlength="100" placeholder="พิมพ์ชื่ออาหารหรือแบรนด์ เช่น นม ข้าวโอ๊ต..." aria-label="ค้นหาผลิตภัณฑ์อาหาร" required />
+                                    <button type="submit">ค้นหา <span aria-hidden="true">→</span></button>
+                                </form>
+                            </header>
+                            <div class="food-search-suggestions" aria-label="คำค้นหายอดนิยม">
+                                <span>ลองค้นหา:</span>
+                                <button type="button" data-food-search-term="นม">นม</button>
+                                <button type="button" data-food-search-term="ข้าวโอ๊ต">ข้าวโอ๊ต</button>
+                                <button type="button" data-food-search-term="โยเกิร์ต">โยเกิร์ต</button>
+                                <button type="button" data-food-search-term="ขนมปัง">ขนมปัง</button>
+                            </div>
+                            <div class="food-search-results" aria-live="polite">
+                                <div class="food-search-results-heading"><strong id="foodSearchResultTitle">ผลการค้นหา</strong><span id="foodSearchResultMeta"></span></div>
+                                <div class="food-search-results-grid" id="foodSearchResultsGrid"><p class="food-search-status">กรอกคำค้นหาเพื่อเริ่มค้นหาผลิตภัณฑ์</p></div>
+                                <div class="food-search-pagination" id="foodSearchPagination" hidden>
+                                    <button type="button" id="foodSearchPrevious">← ก่อนหน้า</button>
+                                    <span id="foodSearchPageLabel"></span>
+                                    <button type="button" id="foodSearchNext">ถัดไป →</button>
+                                </div>
+                            </div>
+                        </section>
+                        <section class="allergy-view" id="food-alerts" aria-labelledby="allergyTitle" hidden>
+                            <header class="allergy-hero">
+                                <div class="allergy-hero-copy">
+                                    <span class="allergy-hero-eyebrow">ดูแลตัวเอง เริ่มจากรู้จักสารก่อภูมิแพ้</span>
+                                    <h1 id="allergyTitle">แจ้งเตือนการแพ้อาหาร ⚠️</h1>
+                                    <p>บันทึกสารที่แพ้และตรวจสอบฉลากอาหารทุกครั้งก่อนรับประทาน</p>
+                                    <form class="food-search allergy-hero-search" id="allergyProductSearchForm" role="search">
+                                        <span aria-hidden="true">⌕</span>
+                                        <input id="allergyProductSearchInput" type="search" minlength="2" maxlength="100" placeholder="ค้นหาผลิตภัณฑ์หรือสแกนบาร์โค้ด..." aria-label="ค้นหาผลิตภัณฑ์เพื่อตรวจสอบ" required />
+                                        <button type="submit">ค้นหา <span aria-hidden="true">→</span></button>
+                                    </form>
+                                </div>
+                                <div class="allergy-hero-art" aria-hidden="true"><span>⚠️</span><span>🥜</span></div>
+                            </header>
+                            <div class="allergy-danger" role="status">
+                                <div class="allergy-danger-copy">
+                                    <span class="allergy-danger-icon" aria-hidden="true">⚠️</span>
+                                    <div>
+                                        <h2>ตั้งค่าการแจ้งเตือนของคุณ</h2>
+                                        <p>เลือกสารก่อภูมิแพ้ที่ต้องการระวัง ข้อมูลนี้บันทึกไว้ในเบราว์เซอร์ของคุณ</p>
+                                        <span class="allergy-selected-chip" id="allergySelectedChip" hidden>⚠ กำลังระวัง: <span id="allergySelectedLabel"></span></span>
+                                    </div>
+                                </div>
+                                <button class="allergy-danger-action" type="button" id="allergyChooseButton">เลือกสารที่แพ้ ↓</button>
+                            </div>
+                            <div class="allergy-main-grid">
+                                <div class="allergy-primary">
+                                    <div class="allergy-detail-grid">
+                                        <section class="allergy-card" id="allergyChoices" aria-labelledby="allergyChoicesTitle">
+                                            <div class="allergy-card-title"><h2 id="allergyChoicesTitle">🧪 สารก่อภูมิแพ้ที่ต้องระวัง</h2><span>เลือกได้มากกว่า 1 รายการ</span></div>
+                                            <div class="allergy-option-grid" id="allergyOptionGrid">
+                                                <button class="allergy-option" type="button" data-allergen="peanut" data-name="ถั่วลิสง" aria-pressed="false"><span class="allergy-option-emoji">🥜</span><strong>ถั่วลิสง</strong><small>Peanut</small></button>
+                                                <button class="allergy-option" type="button" data-allergen="milk" data-name="นม" aria-pressed="false"><span class="allergy-option-emoji">🥛</span><strong>นม</strong><small>Milk</small></button>
+                                                <button class="allergy-option" type="button" data-allergen="egg" data-name="ไข่" aria-pressed="false"><span class="allergy-option-emoji">🥚</span><strong>ไข่</strong><small>Egg</small></button>
+                                                <button class="allergy-option" type="button" data-allergen="wheat" data-name="ข้าวสาลี" aria-pressed="false"><span class="allergy-option-emoji">🌾</span><strong>ข้าวสาลี</strong><small>Wheat</small></button>
+                                                <button class="allergy-option" type="button" data-allergen="soy" data-name="ถั่วเหลือง" aria-pressed="false"><span class="allergy-option-emoji">🫘</span><strong>ถั่วเหลือง</strong><small>Soy</small></button>
+                                                <button class="allergy-option" type="button" data-allergen="fish" data-name="ปลา" aria-pressed="false"><span class="allergy-option-emoji">🐟</span><strong>ปลา</strong><small>Fish</small></button>
+                                                <button class="allergy-option" type="button" data-allergen="shellfish" data-name="สัตว์น้ำเปลือกแข็ง" aria-pressed="false"><span class="allergy-option-emoji">🦐</span><strong>กุ้งและปู</strong><small>Crustacean</small></button>
+                                                <button class="allergy-option" type="button" data-allergen="tree-nut" data-name="ถั่วเปลือกแข็ง" aria-pressed="false"><span class="allergy-option-emoji">🌰</span><strong>ถั่วเปลือกแข็ง</strong><small>Tree nuts</small></button>
+                                                <button class="allergy-option" type="button" data-allergen="sesame" data-name="งา" aria-pressed="false"><span class="allergy-option-emoji">⚪</span><strong>งา</strong><small>Sesame</small></button>
+                                                <button class="allergy-option" type="button" data-allergen="mustard" data-name="มัสตาร์ด" aria-pressed="false"><span class="allergy-option-emoji">🟡</span><strong>มัสตาร์ด</strong><small>Mustard</small></button>
+                                            </div>
+                                            <div class="allergy-confirm-row">
+                                                <p class="allergy-draft-status" id="allergyDraftStatus" role="status" aria-live="polite"></p>
+                                                <button class="allergy-clear-button" id="allergyClearButton" type="button" disabled>ล้างรายการ</button>
+                                                <button class="allergy-confirm-button" id="allergyConfirmButton" type="button" disabled>✓ ยืนยันการเลือก</button>
+                                            </div>
+                                            <p class="allergy-note">รายการนี้เป็นตัวช่วยเตือนเบื้องต้น ไม่ใช่การวินิจฉัย และอาจไม่ครอบคลุมสารที่คุณแพ้ทั้งหมด</p>
+                                        </section>
+                                        <section class="allergy-card" aria-labelledby="allergySymptomsTitle">
+                                            <div class="allergy-card-title"><h2 id="allergySymptomsTitle">🩺 อาการที่ควรสังเกต</h2></div>
+                                            <div class="allergy-symptoms">
+                                                <div class="allergy-symptom"><span class="allergy-symptom-icon">🖐️</span><div><strong>ผิวหนัง</strong><small>ผื่นคัน ลมพิษ หรือบวม</small></div></div>
+                                                <div class="allergy-symptom"><span class="allergy-symptom-icon">😮‍💨</span><div><strong>ระบบหายใจ</strong><small>ไอ หายใจมีเสียงหวีด หรือหายใจลำบาก</small></div></div>
+                                                <div class="allergy-symptom"><span class="allergy-symptom-icon">🤢</span><div><strong>ระบบทางเดินอาหาร</strong><small>ปวดท้อง คลื่นไส้ หรืออาเจียน</small></div></div>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <section class="allergy-card" aria-labelledby="allergyMenuTitle">
+                                        <div class="allergy-card-title"><h2 id="allergyMenuTitle">🥗 ไอเดียอาหารที่เลือกได้</h2><span>ต้องตรวจส่วนผสมก่อนทุกครั้ง</span></div>
+                                        <div class="allergy-menu-grid">
+                                            <article class="allergy-menu-card"><span aria-hidden="true">🥬</span><strong>ผักสด</strong><small>ระวังน้ำสลัดและการปนเปื้อน</small></article>
+                                            <article class="allergy-menu-card"><span aria-hidden="true">🍚</span><strong>ข้าวสวย</strong><small>ตรวจเครื่องปรุงและวิธีปรุง</small></article>
+                                            <article class="allergy-menu-card"><span aria-hidden="true">🍗</span><strong>เนื้อไม่ปรุงแต่ง</strong><small>ตรวจหมัก ซอส และน้ำมัน</small></article>
+                                            <article class="allergy-menu-card"><span aria-hidden="true">🍎</span><strong>ผลไม้สด</strong><small>ล้างและระวังการสัมผัสร่วม</small></article>
+                                        </div>
+                                    </section>
+                                </div>
+                                <aside class="allergy-aside">
+                                    <section class="allergy-card allergy-tip-card" aria-labelledby="allergyTipTitle">
+                                        <div class="allergy-card-title"><h2 id="allergyTipTitle">💡 คำแนะนำ</h2></div>
+                                        <ul class="allergy-tip-list">
+                                            <li><span class="allergy-tip-check">✓</span><span>อ่านฉลากส่วนประกอบและคำเตือนเรื่องการปนเปื้อนทุกครั้ง</span></li>
+                                            <li><span class="allergy-tip-check">✓</span><span>สอบถามร้านอาหารเกี่ยวกับส่วนผสมและอุปกรณ์ที่ใช้ปรุง</span></li>
+                                            <li><span class="allergy-tip-check">✓</span><span>พกยาและทำตามแผนดูแลที่แพทย์แนะนำ</span></li>
+                                        </ul>
+                                    </section>
+                                    <section class="allergy-card allergy-emergency" aria-labelledby="allergyEmergencyTitle">
+                                        <div class="allergy-card-title"><h2 id="allergyEmergencyTitle">🚨 หากมีอาการรุนแรง</h2></div>
+                                        <p>หายใจลำบาก คอบวม หน้ามืด หรืออาการทรุดเร็ว ให้รีบขอความช่วยเหลือฉุกเฉิน</p>
+                                        <a class="allergy-call" href="tel:1669" aria-label="โทรสายด่วนฉุกเฉิน 1669">☎ โทร 1669</a>
+                                    </section>
+                                    <section class="allergy-card allergy-profile" aria-labelledby="allergyProfileTitle">
+                                        <div class="allergy-card-title"><h2 id="allergyProfileTitle">🛡️ สรุปการตั้งค่าของฉัน</h2></div>
+                                        <p class="allergy-note">รายการนี้ช่วยเตือนความจำเท่านั้น ไม่สามารถยืนยันความปลอดภัยของอาหารได้</p>
+                                        <div class="allergy-profile-count"><strong id="allergyProfileCount">0</strong><span>สารที่เลือกให้ช่วยเตือน</span></div>
+                                        <div class="allergy-profile-tags" id="allergyProfileTags"><span class="allergy-none">ยังไม่ได้เลือกรายการ</span></div>
+                                    </section>
+                                </aside>
+                            </div>
+                            <p class="allergy-footer-note">ข้อมูลบนหน้านี้ใช้เพื่อการเตือนเบื้องต้น ไม่ทดแทนคำแนะนำจากแพทย์หรือฉลากผู้ผลิต หากมีอาการแพ้รุนแรงให้ติดต่อบริการฉุกเฉินทันที</p>
+                        </section>
+                        <section class="nutrition-warning-view" id="nutrition-warning" aria-labelledby="nutritionWarningTitle" hidden>
+                            <header class="warning-hero">
+                                <div class="warning-hero-copy">
+                                    <span class="warning-hero-eyebrow">ดูข้อมูลโภชนาการอย่างเข้าใจ เลือกได้อย่างมั่นใจ</span>
+                                    <h1 id="nutritionWarningTitle">Nutrition Warning ⚠️</h1>
+                                    <p>สังเกตน้ำตาล ไขมัน และพลังงานในผลิตภัณฑ์ต่อ 100 กรัม</p>
+                                    <form class="food-search warning-hero-search" id="nutritionWarningSearchForm" role="search">
+                                        <span aria-hidden="true">⌕</span>
+                                        <input id="nutritionWarningSearchInput" type="search" placeholder="ค้นหาสินค้าในรายการ..." aria-label="ค้นหาสินค้าในหน้าคำเตือนโภชนาการ" />
+                                        <button type="submit">ค้นหา <span aria-hidden="true">→</span></button>
+                                    </form>
+                                </div>
+                                <div class="warning-hero-art" aria-hidden="true">🥗⚠️</div>
+                            </header>
+                            <div class="warning-overview" aria-label="สรุปการแจ้งเตือนโภชนาการ">
+                                <article class="warning-stat"><span class="warning-stat-icon" aria-hidden="true">🛒</span><div><strong id="warningTotalCount">0</strong><span>สินค้าที่ตรวจสอบ</span></div></article>
+                                <article class="warning-stat warning-stat--sugar"><span class="warning-stat-icon" aria-hidden="true">🍬</span><div><strong id="warningSugarCount">0</strong><span>น้ำตาลตั้งแต่ 10 g ขึ้นไป</span></div></article>
+                                <article class="warning-stat warning-stat--fat"><span class="warning-stat-icon" aria-hidden="true">🧈</span><div><strong id="warningFatCount">0</strong><span>ไขมันตั้งแต่ 17 g ขึ้นไป</span></div></article>
+                                <article class="warning-stat warning-stat--energy"><span class="warning-stat-icon" aria-hidden="true">⚡</span><div><strong id="warningEnergyCount">0</strong><span>พลังงานตั้งแต่ 400 kcal ขึ้นไป</span></div></article>
+                            </div>
+                            <div class="warning-layout">
+                                <section class="warning-results" aria-labelledby="warningResultsTitle">
+                                    <div class="warning-results-heading"><h2 id="warningResultsTitle">รายการอาหารและคำเตือน</h2><span id="warningResultCount">กำลังตรวจสอบ...</span></div>
+                                    <div class="warning-controls">
+                                        <label class="warning-search-box"><span aria-hidden="true">⌕</span><input id="nutritionWarningFilterInput" type="search" placeholder="ค้นหาชื่ออาหารหรือแบรนด์..." aria-label="กรองรายการอาหารตามชื่อหรือแบรนด์" /></label>
+                                        <div class="warning-filter-list" role="group" aria-label="กรองตามประเภทคำเตือน">
+                                            <button class="warning-filter is-selected" type="button" data-warning-filter="all" aria-pressed="true">ทั้งหมด</button>
+                                            <button class="warning-filter" type="button" data-warning-filter="sugar" aria-pressed="false">น้ำตาลสูง</button>
+                                            <button class="warning-filter" type="button" data-warning-filter="fat" aria-pressed="false">ไขมันสูง</button>
+                                            <button class="warning-filter" type="button" data-warning-filter="energy" aria-pressed="false">พลังงานสูง</button>
+                                            <button class="warning-filter" type="button" data-warning-filter="missing" aria-pressed="false">ข้อมูลไม่ครบ</button>
+                                        </div>
+                                    </div>
+                                    <div class="warning-product-grid" id="nutritionWarningProductGrid" aria-live="polite">
+                                        <p class="warning-empty">กำลังโหลดข้อมูลอาหาร...</p>
+                                    </div>
+                                </section>
+                                <aside class="warning-sidebar">
+                                    <section class="warning-sidebar-card" aria-labelledby="warningRulesTitle">
+                                        <h2 id="warningRulesTitle">📊 เกณฑ์ที่ใช้ไฮไลต์</h2>
+                                        <div class="warning-rule-list">
+                                            <div class="warning-rule"><span class="warning-rule-icon">🍬</span><div><strong>น้ำตาล ≥ 10 g</strong><small>ต่ออาหาร 100 กรัม</small></div></div>
+                                            <div class="warning-rule"><span class="warning-rule-icon">🧈</span><div><strong>ไขมัน ≥ 17 g</strong><small>ต่ออาหาร 100 กรัม</small></div></div>
+                                            <div class="warning-rule"><span class="warning-rule-icon">⚡</span><div><strong>พลังงาน ≥ 400 kcal</strong><small>ต่ออาหาร 100 กรัม</small></div></div>
+                                        </div>
+                                    </section>
+                                    <section class="warning-sidebar-card warning-guide-card" aria-labelledby="warningGuideTitle">
+                                        <h2 id="warningGuideTitle">💡 อ่านคำเตือนอย่างไร</h2>
+                                        <p>ตัวเลขเป็นเกณฑ์คัดกรองเบื้องต้นเพื่อช่วยเปรียบเทียบ ไม่ได้ตัดสินว่าอาหารชนิดนั้นดีหรือไม่ดี พิจารณาปริมาณที่กินและข้อมูลอื่นบนฉลากร่วมด้วย</p>
+                                    </section>
+                                    <div class="warning-callout"><span aria-hidden="true">ⓘ</span><span>ข้อมูลบางรายการอาจไม่ครบหรือไม่ตรงกับฉลากรุ่นล่าสุด หากไม่มีข้อมูลจะแสดงเป็น “ข้อมูลไม่ครบ” ไม่ได้หมายความว่าปลอดภัย</span></div>
+                                </aside>
+                            </div>
+                        </section>
+                        <div class="food-compare-tray" id="foodCompareTray" hidden>
+                            <div class="food-compare-label"><strong>▣ รายการที่เลือก (<span id="foodCompareCount">0</span> รายการ)</strong><span id="foodCompareNames">เลือกสินค้าเพื่อเริ่มเปรียบเทียบ</span></div>
+                            <button type="button" id="foodClearCompare">ล้างรายการ</button>
+                            <button type="button" id="foodCompareButton" disabled>▥ ดูสรุปโภชนาการ　→</button>
+                        </div>
+                        <dialog class="food-compare-dialog" id="foodCompareDialog" aria-labelledby="foodCompareTitle">
+                            <h2 id="foodCompareTitle">เปรียบเทียบข้อมูลโภชนาการ</h2>
+                            <div id="foodCompareTable"></div>
+                            <button class="food-compare-close" id="foodCompareClose" type="button">ปิด</button>
+                        </dialog>
+                    </div>
+
+                    <div class="legacy-home" hidden>
                     <section class="hero-banner" aria-labelledby="heroTitle">
                         <img id="heroCat" class="hero-cat-photo" alt="แมวน้อยจาก TheCatAPI" hidden />
                         <span class="hero-paw" aria-hidden="true">🐾</span>
@@ -1746,6 +2696,7 @@
                         <span class="footer-message">A little care, a lot of love. ♡<span class="footer-small">PAWCARE © 2026 · MADE WITH LOVE FOR CATS</span></span>
                         <span class="footer-rule" aria-hidden="true"></span>
                     </footer>
+                    </div>
                 </main>
 
                 <main class="scanner-page" id="scannerPage" hidden>
@@ -1867,7 +2818,6 @@
                         <section class="cat-profile-panel" aria-labelledby="catProfileHistoryTitle">
                             <div class="care-panel-header">
                                 <h2 class="cat-profile-panel-heading" id="catProfileHistoryTitle"><span aria-hidden="true">▧</span>ประวัติการสแกน</h2>
-                                <button class="cat-profile-action-link" id="openScannerFromProfile" type="button">เริ่มสแกน →</button>
                             </div>
                             <div class="cat-profile-history">
                                 <p class="cat-profile-history-empty"><strong>ยังไม่มีประวัติการสแกน</strong>ผลวิเคราะห์จะแสดงในหน้า AI Pet Scanner และยังไม่บันทึกเป็นประวัติ</p>
@@ -2154,7 +3104,7 @@
 
         <dialog class="auth-dialog" id="authDialog" aria-labelledby="authDialogTitle">
             <div class="auth-dialog-header">
-                <h2 class="auth-dialog-title" id="authDialogTitle">บัญชี PawCare</h2>
+                <h2 class="auth-dialog-title" id="authDialogTitle">บัญชี FoodCheck</h2>
                 <button class="auth-close" id="closeAuthDialog" type="button" aria-label="ปิดหน้าต่าง">×</button>
             </div>
             <section class="auth-wrap" aria-label="เข้าสู่ระบบหรือสมัครสมาชิก">
@@ -2289,7 +3239,6 @@
             loginEmail.focus();
         });
 
-        const authNavButton = document.getElementById("authNavButton");
         const authDialog = document.getElementById("authDialog");
         const dashboardShell = document.getElementById("dashboardShell");
         const authDialogTitle = document.getElementById("authDialogTitle");
@@ -2297,34 +3246,15 @@
 
         function requireAuthentication() {
             if (authenticatedUser) return true;
-            openAuthDialog("login");
             return false;
         }
 
-        function openAuthDialog(tabName = "login") {
-            selectTab(tabName);
-            const isRequired = !authenticatedUser;
-            authDialog.classList.toggle("is-required", isRequired);
-            closeAuthDialogButton.hidden = isRequired;
-            authDialogTitle.textContent = isRequired ? "เข้าสู่ระบบก่อนใช้งาน PawCare" : "บัญชี PawCare";
-            if (!authDialog.open) authDialog.showModal();
-            window.setTimeout(() => {
-                document.querySelector(tabName === "login"
-                    ? '#loginForm input[name="email"]'
-                    : '#registerForm input[name="name"]').focus();
-            }, 0);
+        function openAuthDialog() {
+            if (authDialog.open) authDialog.close();
         }
 
         const logoutDialog = document.getElementById("logoutDialog");
         const confirmLogoutButton = document.getElementById("confirmLogout");
-
-        authNavButton.addEventListener("click", () => {
-            if (!authenticatedUser) {
-                openAuthDialog("login");
-                return;
-            }
-            if (!logoutDialog.open) logoutDialog.showModal();
-        });
 
         document.getElementById("cancelLogout").addEventListener("click", () => logoutDialog.close());
         confirmLogoutButton.addEventListener("click", async () => {
@@ -2333,19 +3263,16 @@
                 return;
             }
             confirmLogoutButton.disabled = true;
-            authNavButton.disabled = true;
             try {
                 const response = await fetch("/api/auth/logout", { method: "POST" });
                 const result = await response.json();
                 if (!response.ok) throw new Error(result.error || "ออกจากระบบไม่สำเร็จ");
                 logoutDialog.close();
                 setAuthenticatedUser(null);
-                openAuthDialog("login");
                 showNotice("ออกจากระบบเรียบร้อยแล้ว");
             } catch (error) {
                 showNotice(error.message || "เชื่อมต่อระบบไม่ได้ กรุณาลองใหม่");
             } finally {
-                authNavButton.disabled = false;
                 confirmLogoutButton.disabled = false;
             }
         });
@@ -2355,13 +3282,13 @@
         });
 
         closeAuthDialogButton.addEventListener("click", () => {
-            if (authenticatedUser) authDialog.close();
+            if (authDialog.open) authDialog.close();
         });
         authDialog.addEventListener("click", (event) => {
-            if (event.target === authDialog && authenticatedUser) authDialog.close();
+            if (event.target === authDialog) authDialog.close();
         });
         authDialog.addEventListener("cancel", (event) => {
-            if (!authenticatedUser) event.preventDefault();
+            if (authDialog.open) authDialog.close();
         });
 
         document.getElementById("profileButton").addEventListener("click", () => {
@@ -2405,7 +3332,7 @@
         const sideNavItems = [...document.querySelectorAll(".side-link[data-dashboard-nav]")];
 
         function setDashboardView(view) {
-            if (!requireAuthentication()) return;
+            if (view !== "home" && !requireAuthentication()) return;
             const showCare = view === "care";
             const showScanner = view === "scanner";
             const showProfile = view === "profile";
@@ -2570,7 +3497,7 @@
             showNotice("คืนค่าการตั้งค่าเริ่มต้นแล้ว");
         });
         document.getElementById("settingsAccountAction").addEventListener("click", () => {
-            if (authenticatedUser) authNavButton.click();
+            if (authenticatedUser) logoutDialog.showModal();
             else openAuthDialog("login");
         });
         document.getElementById("settingsCatProfileButton").addEventListener("click", () => setDashboardView("profile"));
@@ -2728,7 +3655,7 @@
             }
         }
 
-        document.getElementById("scannerCameraButton").addEventListener("click", openScannerCamera);
+        // Direct camera launch is intentionally disabled.
         document.getElementById("closeScannerCamera").addEventListener("click", () => scannerCameraDialog.close());
         document.getElementById("cancelScannerCamera").addEventListener("click", () => scannerCameraDialog.close());
         scannerCameraDialog.addEventListener("close", stopScannerCamera);
@@ -3042,7 +3969,6 @@
             }
         });
         document.getElementById("openCareFromProfile").addEventListener("click", () => setDashboardView("care"));
-        document.getElementById("openScannerFromProfile").addEventListener("click", () => setDashboardView("scanner"));
         document.getElementById("dashboardSearch").addEventListener("input", (event) => {
             const query = event.currentTarget.value.trim().toLocaleLowerCase();
             document.querySelectorAll("[data-search-item]").forEach((card) => {
@@ -3797,14 +4723,879 @@
         renderCarePage();
         renderCatProfile();
 
+        let foodDashboardData = [];
+        let foodDashboardCategory = "all";
+        let foodListingBrand = "all";
+        let foodListingOpen = false;
+        let foodListingVisibleLimit = 12;
+        let foodSearchProducts = [];
+        let foodSearchPage = 1;
+        let foodSearchTotalPages = 1;
+        let foodSearchRequestId = 0;
+        let nutritionWarningFilter = "all";
+        const selectedFoodNutriScores = new Set();
+        const foodCompareSelection = [];
+        let foodComparisonSummary = [];
+
+        function getFoodDashboardCategory(food) {
+            const text = [food?.name, food?.brand, food?.flavor, food?.ingredients].filter(Boolean).join(" ").toLowerCase();
+            if (/(?:^|\s)นม|milk|yogurt|lactose|dairy|cream/.test(text)) return "milk";
+            if (/(ชิพ|chips|cracker|cookie|snack|potato)/.test(text)) return "chips";
+            if (/(ขนมปัง|bread|toast|bun|cake|wafer)/.test(text)) return "bread";
+            if (/(ข้าว|\b(?:rice|cereal|grain|oat|wheat)\b)/.test(text)) return "rice";
+            if (/(น้ำผลไม้|juice|tea|coffee|soft drink|drink)/.test(text)) return "juice";
+            return food?.category || "all";
+        }
+
+        function foodDashboardNumber(value) {
+            const number = Number(value);
+            return Number.isFinite(number) ? number : null;
+        }
+
+        function averageFoodValue(key, foods) {
+            const values = foods.map((food) => foodDashboardNumber(food[key])).filter((value) => value !== null);
+            return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+        }
+
+        function formatFoodValue(value) {
+            return value === null ? "—" : value.toFixed(value < 10 ? 1 : 0);
+        }
+
+        function createFoodImage(food, className) {
+            const imageUrl = typeof food.image === "string" && food.image.trim()
+                ? food.image
+                : (typeof food.apiImage === "string" ? food.apiImage : "");
+            if (!imageUrl) return null;
+            const image = document.createElement("img");
+            image.className = className;
+            image.src = imageUrl;
+            image.alt = food.name || "ผลิตภัณฑ์อาหาร";
+            image.loading = "lazy";
+            image.onerror = () => image.remove();
+            return image;
+        }
+
+        function getFoodProductKey(food) {
+            return String(food.barcode && food.barcode !== "-" ? food.barcode : food.id || food.name || "");
+        }
+
+        const FOOD_ALLERGEN_KEY = "foodcheck-allergens-v1";
+        const ALLERGEN_NAMES = Object.fromEntries([...document.querySelectorAll("[data-allergen]")].map((button) => [button.dataset.allergen, button.dataset.name]));
+        const FOOD_ALLERGEN_PATTERNS = {
+            peanut: /\b(?:peanuts?|groundnuts?|arachis)\b|ถั่วลิสง/i,
+            milk: /\b(?:milk|whey|casein(?:ate)?|lactose|dairy|butter|cream|cheese|yogh?urt|ghee)\b|นม(?!ถั่วเหลือง|อัลมอนด์|ข้าวโอ๊ต|ข้าว|มะพร้าว|พืช)|เวย์|เคซีน|แลคโตส|เนย|ครีม|ชีส|โยเกิร์ต|โยเกิต/i,
+            egg: /\b(?:eggs?|albumen|ovalbumin|lysozyme)\b|ไข่|อัลบูมิน/i,
+            wheat: /\b(?:wheat|gluten|spelt|semolina|triticale)\b|ข้าวสาลี|แป้งสาลี|กลูเตน/i,
+            soy: /\b(?:soy(?:beans?)?|soya|tofu|tempeh|edamame|miso)\b|ถั่วเหลือง|เต้าหู้|เทมเป้|มิโสะ|มิโซะ/i,
+            fish: /\b(?:fish|anchovy|tuna|salmon|cod|sardine|mackerel)\b|ปลา|น้ำปลา|ปลาร้า/i,
+            shellfish: /\b(?:shellfish|crustacean|shrimp|prawn|crab|lobster|crayfish|krill|oyster|mussel|clam|scallop)\b|กุ้ง|ปู|หอย|กั้ง|ล็อบสเตอร์/i,
+            "tree-nut": /\b(?:tree nuts?|almonds?|hazelnuts?|cashews?|walnuts?|pistachios?|pecans?|macadamias?|brazil nuts?|pine nuts?)\b|ถั่วเปลือกแข็ง|อัลมอนด์|เฮเซลนัท|เม็ดมะม่วงหิมพานต์|วอลนัท|พิสตาชิโอ|พีแคน|แมคคาเดเมีย|ถั่วบราซิล/i,
+            sesame: /\b(?:sesame|tahini|til)\b|งา|ทาฮินี/i,
+            mustard: /\bmustard\b|มัสตาร์ด/i
+        };
+
+        function getFoodAllergyWarning(food) {
+            if (!selectedFoodAllergens.size) return null;
+            const ingredients = String(food?.ingredients || "").trim();
+            const isIncomplete = !ingredients || /^[-—]$/.test(ingredients) || /ข้อมูล.*ตัวอย่าง/i.test(ingredients);
+            if (isIncomplete) return { matches: [], isIncomplete: true };
+            const matches = [...selectedFoodAllergens].filter((key) => FOOD_ALLERGEN_PATTERNS[key]?.test(ingredients));
+            return matches.length ? { matches, isIncomplete: false } : null;
+        }
+
+        function readFoodAllergens() {
+            try {
+                const saved = JSON.parse(localStorage.getItem(FOOD_ALLERGEN_KEY) || "[]");
+                return Array.isArray(saved) ? saved.filter((key) => Object.hasOwn(ALLERGEN_NAMES, key)) : [];
+            } catch (error) {
+                console.warn("Unable to read saved allergy alerts:", error);
+                return [];
+            }
+        }
+        const selectedFoodAllergens = new Set(readFoodAllergens());
+        const draftFoodAllergens = new Set(selectedFoodAllergens);
+        let allergySaveMessage = "";
+
+        function areFoodAllergenSetsEqual(left, right) {
+            return left.size === right.size && [...left].every((key) => right.has(key));
+        }
+
+        function createFoodListingCard(food) {
+            const key = getFoodProductKey(food);
+            const card = document.createElement("article");
+            card.className = "food-listing-card";
+            const imageWrap = document.createElement("div");
+            imageWrap.className = "food-listing-image";
+            const imageUrl = food.customImage || food.image || food.apiImage || "";
+            const image = imageUrl ? document.createElement("img") : null;
+            if (image) {
+                image.src = imageUrl;
+                image.alt = food.name || "ผลิตภัณฑ์อาหาร";
+                image.loading = "lazy";
+            }
+            if (image) imageWrap.appendChild(image);
+            else {
+                const placeholder = document.createElement("span");
+                placeholder.className = "food-listing-placeholder";
+                placeholder.setAttribute("aria-hidden", "true");
+                placeholder.textContent = food.category === "milk" ? "🥛" : food.category === "bread" ? "🍞" : food.category === "chips" ? "🥔" : food.category === "juice" ? "🧃" : "🌾";
+                imageWrap.appendChild(placeholder);
+            }
+            card.appendChild(imageWrap);
+
+            const name = document.createElement("h3");
+            name.textContent = food.name || "ไม่พบชื่อสินค้า";
+            card.appendChild(name);
+            const brand = document.createElement("div");
+            brand.className = "food-listing-brand";
+            brand.textContent = food.brand || "ไม่พบแบรนด์";
+            card.appendChild(brand);
+            const allergyWarning = getFoodAllergyWarning(food);
+            if (allergyWarning) {
+                const warning = document.createElement("p");
+                warning.className = `food-allergy-warning${allergyWarning.isIncomplete ? " is-unknown" : ""}`;
+                warning.setAttribute("role", "status");
+                warning.textContent = allergyWarning.isIncomplete
+                    ? "⚠ ไม่มีข้อมูลส่วนผสมครบถ้วน โปรดตรวจสอบฉลากก่อนรับประทาน"
+                    : `⚠ พบส่วนผสมที่คุณเลือกระวัง: ${allergyWarning.matches.map((key) => ALLERGEN_NAMES[key]).join("、")}`;
+                card.appendChild(warning);
+            }
+            if (food.isSample) {
+                const sampleNote = document.createElement("small");
+                sampleNote.className = "food-sample-note";
+                sampleNote.textContent = "ข้อมูลตัวอย่าง · โปรดตรวจสอบฉลากจริง";
+                card.appendChild(sampleNote);
+            }
+
+            const nutrition = document.createElement("div");
+            nutrition.className = "food-listing-nutri";
+            const score = document.createElement("span");
+            score.className = "food-listing-score";
+            const grade = String(food.nutriScore || "").toUpperCase();
+            score.textContent = /^[A-E]$/.test(grade) ? grade : "—";
+            nutrition.appendChild(score);
+            const energyLabel = document.createElement("span");
+            energyLabel.className = "food-listing-energy";
+            energyLabel.textContent = `${formatFoodValue(foodDashboardNumber(food.energy))} kcal`;
+            nutrition.appendChild(energyLabel);
+            const serving = document.createElement("span");
+            serving.className = "food-listing-serving";
+            serving.textContent = "ต่อ 100 g";
+            nutrition.appendChild(serving);
+            card.appendChild(nutrition);
+
+            const nutrientLabels = document.createElement("div");
+            nutrientLabels.className = "food-listing-nutrients";
+            [["น้ำตาล", food.sugar, 10], ["ไขมัน", food.fat, 17]].forEach(([label, value, highAt]) => {
+                const amount = foodDashboardNumber(value);
+                const tag = document.createElement("span");
+                if (amount !== null && amount >= highAt) tag.classList.add("is-high");
+                tag.textContent = `${label} ${formatFoodValue(amount)}${amount === null ? "" : " g"}`;
+                nutrientLabels.appendChild(tag);
+            });
+            card.appendChild(nutrientLabels);
+
+            const actions = document.createElement("div");
+            actions.className = "food-listing-actions";
+            const compare = document.createElement("button");
+            compare.className = "food-listing-compare";
+            compare.type = "button";
+            const alreadySelected = foodCompareSelection.some((item) => getFoodProductKey(item) === key);
+            compare.classList.toggle("is-selected", alreadySelected);
+            compare.setAttribute("aria-pressed", String(alreadySelected));
+            compare.textContent = alreadySelected ? "✓ เลือกแล้ว" : "＋ เลือกเปรียบเทียบ";
+            compare.addEventListener("click", () => {
+                toggleFoodCompare(food);
+                if (!document.getElementById("food-search").hidden) renderFoodSearchResults();
+            });
+            actions.appendChild(compare);
+
+            card.appendChild(actions);
+            return card;
+        }
+
+        function toggleFoodCompare(food) {
+            const key = getFoodProductKey(food);
+            const selectedIndex = foodCompareSelection.findIndex((item) => getFoodProductKey(item) === key);
+            if (selectedIndex >= 0) {
+                foodCompareSelection.splice(selectedIndex, 1);
+            } else if (foodCompareSelection.length < 3) {
+                foodCompareSelection.push(food);
+            } else {
+                showNotice("เปรียบเทียบได้สูงสุด 3 รายการ");
+                return;
+            }
+            foodComparisonSummary = [];
+            renderFoodDashboard();
+        }
+
+        function renderFoodCompareTray() {
+            const tray = document.getElementById("foodCompareTray");
+            const count = document.getElementById("foodCompareCount");
+            const names = document.getElementById("foodCompareNames");
+            const compareButton = document.getElementById("foodCompareButton");
+            const clearButton = document.getElementById("foodClearCompare");
+            const asideSummary = document.querySelector(".food-aside-summary");
+            tray.hidden = (!foodListingOpen && document.getElementById("food-search").hidden)
+                || (!foodListingOpen && foodCompareSelection.length === 0);
+            count.textContent = String(foodCompareSelection.length);
+            names.textContent = foodCompareSelection.length
+                ? foodCompareSelection.map((food) => food.name || "สินค้า").join(" · ")
+                : "เลือกสินค้าเพื่อเริ่มเปรียบเทียบ";
+            compareButton.disabled = foodCompareSelection.length < 2;
+            clearButton.disabled = foodCompareSelection.length === 0;
+            if (asideSummary) {
+                const summary = asideSummary.querySelector("p");
+                const details = asideSummary.querySelector("span");
+                if (summary) summary.textContent = foodCompareSelection.length ? `เลือกแล้ว ${foodCompareSelection.length} รายการ` : "ยังไม่มีสินค้าที่คุณเลือก";
+                if (details) details.textContent = foodCompareSelection.length
+                    ? `พลังงานรวม ${foodCompareSelection.reduce((sum, food) => sum + (foodDashboardNumber(food.energy) || 0), 0).toFixed(0)} kcal / 100 g`
+                    : "กรุณาเลือกสินค้าจากรายการ";
+            }
+        }
+
+        function renderFoodComparison() {
+            const container = document.getElementById("foodCompareTable");
+            container.replaceChildren();
+            const table = document.createElement("table");
+            const head = document.createElement("thead");
+            const headerRow = document.createElement("tr");
+            const firstHeader = document.createElement("th");
+            firstHeader.textContent = "สารอาหาร";
+            headerRow.appendChild(firstHeader);
+            foodCompareSelection.forEach((food) => {
+                const cell = document.createElement("th");
+                cell.textContent = food.name || "สินค้า";
+                headerRow.appendChild(cell);
+            });
+            head.appendChild(headerRow);
+            table.appendChild(head);
+            const body = document.createElement("tbody");
+            [["พลังงาน (kcal)", "energy"], ["น้ำตาล (g)", "sugar"], ["ไขมัน (g)", "fat"], ["โปรตีน (g)", "protein"]].forEach(([label, key]) => {
+                const row = document.createElement("tr");
+                const title = document.createElement("th");
+                title.textContent = label;
+                row.appendChild(title);
+                foodCompareSelection.forEach((food) => {
+                    const value = foodDashboardNumber(food[key]);
+                    const cell = document.createElement("td");
+                    cell.textContent = formatFoodValue(value);
+                    row.appendChild(cell);
+                });
+                body.appendChild(row);
+            });
+            table.appendChild(body);
+            container.appendChild(table);
+        }
+
+        function setFoodListingView(open, category = null, activeNav = "choose") {
+            foodListingOpen = open;
+            document.querySelector(".food-overview-view").hidden = open;
+            document.getElementById("food-products").hidden = !open;
+            document.getElementById("food-search").hidden = true;
+            document.getElementById("food-alerts").hidden = true;
+            document.getElementById("nutrition-warning").hidden = true;
+            document.querySelectorAll(".side-nav .side-link").forEach((link) => {
+                const isActiveFoodLink = open && link.dataset.foodNav === activeNav;
+                const isActiveHomeLink = !open && link.dataset.dashboardNav === "home";
+                link.classList.toggle("is-active", isActiveFoodLink || isActiveHomeLink);
+            });
+            if (category) selectFoodDashboardCategory(category);
+            else renderFoodDashboard();
+            renderFoodCompareTray();
+            if (open) window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function setFoodSearchView() {
+            foodListingOpen = false;
+            document.querySelector(".food-overview-view").hidden = true;
+            document.getElementById("food-products").hidden = true;
+            document.getElementById("food-search").hidden = false;
+            document.getElementById("food-alerts").hidden = true;
+            document.getElementById("nutrition-warning").hidden = true;
+            document.querySelectorAll(".side-nav .side-link").forEach((link) => {
+                link.classList.toggle("is-active", link.dataset.foodNav === "search");
+            });
+            renderFoodCompareTray();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function setAllergyAlertView() {
+            foodListingOpen = false;
+            document.querySelector(".food-overview-view").hidden = true;
+            document.getElementById("food-products").hidden = true;
+            document.getElementById("food-search").hidden = true;
+            document.getElementById("food-alerts").hidden = false;
+            document.getElementById("nutrition-warning").hidden = true;
+            document.querySelectorAll(".side-nav .side-link").forEach((link) => {
+                link.classList.toggle("is-active", link.dataset.foodNav === "alerts");
+            });
+            renderAllergyAlertSettings();
+            renderFoodCompareTray();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function setNutritionWarningView() {
+            foodListingOpen = false;
+            document.querySelector(".food-overview-view").hidden = true;
+            document.getElementById("food-products").hidden = true;
+            document.getElementById("food-search").hidden = true;
+            document.getElementById("food-alerts").hidden = true;
+            document.getElementById("nutrition-warning").hidden = false;
+            document.querySelectorAll(".side-nav .side-link").forEach((link) => {
+                link.classList.toggle("is-active", link.dataset.foodNav === "warnings");
+            });
+            renderNutritionWarnings();
+            renderFoodCompareTray();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        }
+
+        function getNutritionWarningFlags(food) {
+            const sugar = foodDashboardNumber(food.sugar);
+            const fat = foodDashboardNumber(food.fat);
+            const energy = foodDashboardNumber(food.energy);
+            return {
+                sugar,
+                fat,
+                energy,
+                highSugar: sugar !== null && sugar >= 10,
+                highFat: fat !== null && fat >= 17,
+                highEnergy: energy !== null && energy >= 400,
+                missing: sugar === null || fat === null || energy === null
+            };
+        }
+
+        function renderNutritionWarnings() {
+            const grid = document.getElementById("nutritionWarningProductGrid");
+            if (!grid) return;
+            const totals = foodDashboardData.reduce((summary, food) => {
+                const flags = getNutritionWarningFlags(food);
+                summary.sugar += Number(flags.highSugar);
+                summary.fat += Number(flags.highFat);
+                summary.energy += Number(flags.highEnergy);
+                return summary;
+            }, { sugar: 0, fat: 0, energy: 0 });
+            document.getElementById("warningTotalCount").textContent = String(foodDashboardData.length);
+            document.getElementById("warningSugarCount").textContent = String(totals.sugar);
+            document.getElementById("warningFatCount").textContent = String(totals.fat);
+            document.getElementById("warningEnergyCount").textContent = String(totals.energy);
+
+            const query = document.getElementById("nutritionWarningFilterInput").value.trim().toLowerCase();
+            const visible = foodDashboardData.filter((food) => {
+                const flags = getNutritionWarningFlags(food);
+                const searchable = [food.name, food.brand, food.flavor, food.ingredients].filter(Boolean).join(" ").toLowerCase();
+                const matchesQuery = !query || searchable.includes(query);
+                const matchesFilter = nutritionWarningFilter === "all"
+                    || (nutritionWarningFilter === "sugar" && flags.highSugar)
+                    || (nutritionWarningFilter === "fat" && flags.highFat)
+                    || (nutritionWarningFilter === "energy" && flags.highEnergy)
+                    || (nutritionWarningFilter === "missing" && flags.missing);
+                return matchesQuery && matchesFilter;
+            });
+            document.getElementById("warningResultCount").textContent = `แสดง ${visible.length} จาก ${foodDashboardData.length} รายการ`;
+            grid.replaceChildren();
+            if (!visible.length) {
+                const empty = document.createElement("p");
+                empty.className = "warning-empty";
+                empty.textContent = foodDashboardData.length
+                    ? "ไม่พบสินค้าที่ตรงกับคำค้นหาหรือประเภทคำเตือนนี้"
+                    : "ยังไม่มีข้อมูลสินค้าให้ตรวจสอบ";
+                grid.appendChild(empty);
+                return;
+            }
+
+            visible.forEach((food) => {
+                const flags = getNutritionWarningFlags(food);
+                const card = createFoodListingCard(food);
+                card.classList.add("warning-product-card");
+                const badges = document.createElement("div");
+                badges.className = "warning-product-flags";
+                const addBadge = (text, high = false, missing = false) => {
+                    const badge = document.createElement("span");
+                    if (high) badge.classList.add("is-high");
+                    if (missing) badge.classList.add("is-missing");
+                    badge.textContent = text;
+                    badges.appendChild(badge);
+                };
+                if (flags.highSugar) addBadge(`น้ำตาลสูง ${formatFoodValue(flags.sugar)} g`, true);
+                if (flags.highFat) addBadge(`ไขมันสูง ${formatFoodValue(flags.fat)} g`, true);
+                if (flags.highEnergy) addBadge(`พลังงานสูง ${formatFoodValue(flags.energy)} kcal`, true);
+                if (flags.missing) {
+                    const missingNames = [
+                        flags.sugar === null ? "น้ำตาล" : "",
+                        flags.fat === null ? "ไขมัน" : "",
+                        flags.energy === null ? "พลังงาน" : ""
+                    ].filter(Boolean);
+                    addBadge(`ข้อมูล${missingNames.length === 3 ? "" : ` ${missingNames.join("/")}`}ไม่ครบ`, false, true);
+                }
+                if (!flags.highSugar && !flags.highFat && !flags.highEnergy && !flags.missing) {
+                    addBadge("ไม่เข้าเกณฑ์ไฮไลต์จากข้อมูลที่มี");
+                }
+                const nutrition = card.querySelector(".food-listing-nutri");
+                if (nutrition) nutrition.after(badges);
+                grid.appendChild(card);
+            });
+        }
+
+        function renderAllergyAlertSettings() {
+            const names = [...selectedFoodAllergens].map((key) => ALLERGEN_NAMES[key]).filter(Boolean);
+            const draftNames = [...draftFoodAllergens].map((key) => ALLERGEN_NAMES[key]).filter(Boolean);
+            const hasPendingChanges = !areFoodAllergenSetsEqual(selectedFoodAllergens, draftFoodAllergens);
+            document.querySelectorAll("[data-allergen]").forEach((button) => {
+                button.setAttribute("aria-pressed", String(draftFoodAllergens.has(button.dataset.allergen)));
+            });
+            document.getElementById("allergyConfirmButton").disabled = !hasPendingChanges;
+            document.getElementById("allergyClearButton").disabled = !selectedFoodAllergens.size && !draftFoodAllergens.size;
+            document.getElementById("allergyDraftStatus").textContent = hasPendingChanges
+                ? `ยังไม่ได้ยืนยัน ${draftNames.length} รายการที่เลือก`
+                : allergySaveMessage;
+            const chip = document.getElementById("allergySelectedChip");
+            chip.hidden = names.length === 0;
+            document.getElementById("allergySelectedLabel").textContent = names.join(" · ");
+            document.getElementById("allergyProfileCount").textContent = String(names.length);
+            const tags = document.getElementById("allergyProfileTags");
+            tags.replaceChildren();
+            if (!names.length) {
+                const empty = document.createElement("span");
+                empty.className = "allergy-none";
+                empty.textContent = "ยังไม่ได้เลือกรายการ";
+                tags.appendChild(empty);
+                return;
+            }
+            names.forEach((name) => {
+                const tag = document.createElement("span");
+                tag.textContent = name;
+                tags.appendChild(tag);
+            });
+        }
+
+        function renderFoodSearchResults() {
+            const grid = document.getElementById("foodSearchResultsGrid");
+            const pagination = document.getElementById("foodSearchPagination");
+            grid.replaceChildren();
+            if (!foodSearchProducts.length) {
+                const status = document.createElement("p");
+                status.className = "food-search-status";
+                status.textContent = "ไม่พบผลิตภัณฑ์ที่ตรงกับคำค้นหา ลองใช้คำค้นหาอื่น";
+                grid.appendChild(status);
+                pagination.hidden = true;
+                return;
+            }
+            foodSearchProducts.forEach((food) => grid.appendChild(createFoodListingCard(food)));
+            pagination.hidden = foodSearchTotalPages <= 1;
+            document.getElementById("foodSearchPageLabel").textContent = `หน้า ${foodSearchPage} จาก ${foodSearchTotalPages}`;
+            document.getElementById("foodSearchPrevious").disabled = foodSearchPage <= 1;
+            document.getElementById("foodSearchNext").disabled = foodSearchPage >= foodSearchTotalPages;
+        }
+
+        async function searchFoodProducts(page = 1) {
+            const input = document.getElementById("foodProductSearchInput");
+            const term = input.value.trim();
+            if (term.length < 2) {
+                input.setCustomValidity("กรุณากรอกคำค้นหาอย่างน้อย 2 ตัวอักษร");
+                input.reportValidity();
+                return;
+            }
+            input.setCustomValidity("");
+            foodSearchPage = page;
+            const requestId = ++foodSearchRequestId;
+            const grid = document.getElementById("foodSearchResultsGrid");
+            const pagination = document.getElementById("foodSearchPagination");
+            const title = document.getElementById("foodSearchResultTitle");
+            document.getElementById("foodSearchResultMeta").textContent = "";
+            title.textContent = `กำลังค้นหา “${term}”...`;
+            pagination.hidden = true;
+            const loading = document.createElement("p");
+            loading.className = "food-search-status";
+            loading.textContent = "กำลังค้นหาผลิตภัณฑ์...";
+            grid.replaceChildren(loading);
+
+            try {
+                const response = await fetch(`/api/products/search?q=${encodeURIComponent(term)}&page=${page}`, { cache: "no-store" });
+                const contentType = response.headers.get("content-type") || "";
+                const result = contentType.includes("application/json") ? await response.json() : null;
+                if (!response.ok) throw new Error(result?.error || `ค้นหาไม่สำเร็จ (HTTP ${response.status})`);
+                if (requestId !== foodSearchRequestId) return;
+                foodSearchProducts = Array.isArray(result?.data) ? result.data : [];
+                foodSearchPage = Number(result?.page || page);
+                const totalPages = Number(result?.totalPages);
+                foodSearchTotalPages = Number.isInteger(totalPages) && totalPages > 0 ? totalPages : 1;
+                title.textContent = `ผลการค้นหา “${term}”`;
+                document.getElementById("foodSearchResultMeta").textContent = `${Number(result?.count || 0).toLocaleString("th-TH")} รายการ`;
+                if (!foodSearchProducts.length) {
+                    const empty = document.createElement("p");
+                    empty.className = "food-search-status";
+                    empty.textContent = "ไม่พบผลิตภัณฑ์ที่ตรงกับคำค้นหา ลองใช้คำค้นหาอื่น";
+                    grid.replaceChildren(empty);
+                    pagination.hidden = true;
+                    return;
+                }
+                renderFoodSearchResults();
+            } catch (error) {
+                if (requestId !== foodSearchRequestId) return;
+                foodSearchProducts = [];
+                title.textContent = `ค้นหา “${term}” ไม่สำเร็จ`;
+                const failure = document.createElement("p");
+                failure.className = "food-search-status";
+                failure.textContent = `${error.message || "เกิดข้อผิดพลาด"} กรุณาลองใหม่อีกครั้ง`;
+                grid.replaceChildren(failure);
+                pagination.hidden = true;
+                console.error("Unable to search Open Food Facts products:", error);
+            }
+        }
+
+        function getVisibleFoodDashboardData() {
+            const keyword = (document.getElementById("foodSearchInput").value || document.getElementById("dashboardSearch").value || "").trim().toLowerCase();
+            const sort = document.getElementById("foodListingSort").value;
+            const foods = foodDashboardData.filter((food) => {
+                const matchesCategory = foodDashboardCategory === "all" || getFoodDashboardCategory(food) === foodDashboardCategory;
+                const searchable = [food.name, food.brand, food.flavor, food.ingredients].filter(Boolean).join(" ").toLowerCase();
+                const grade = String(food.nutriScore || "").toUpperCase();
+                const matchesScore = !selectedFoodNutriScores.size || selectedFoodNutriScores.has(grade);
+                const matchesBrand = foodListingBrand === "all" || String(food.brand || "") === foodListingBrand;
+                const matchesNutrients = [...document.querySelectorAll("[data-nutrient]:checked")].every((filter) => {
+                    const value = foodDashboardNumber(food[filter.dataset.nutrient]);
+                    if (value === null) return false;
+                    if (filter.dataset.max !== undefined && value > Number(filter.dataset.max)) return false;
+                    if (filter.dataset.min !== undefined && value < Number(filter.dataset.min)) return false;
+                    return true;
+                });
+                return matchesCategory && matchesScore && matchesBrand && matchesNutrients && (!keyword || searchable.includes(keyword));
+            });
+            return foods.sort((left, right) => {
+                const leftValue = foodDashboardNumber(left[sort]) ?? 0;
+                const rightValue = foodDashboardNumber(right[sort]) ?? 0;
+                return sort === "protein" ? rightValue - leftValue : leftValue - rightValue;
+            });
+        }
+
+        function renderFoodDashboard() {
+            const summaryFoods = foodComparisonSummary;
+            const energy = averageFoodValue("energy", summaryFoods);
+            const sugar = averageFoodValue("sugar", summaryFoods);
+            const fat = averageFoodValue("fat", summaryFoods);
+            document.getElementById("foodTotalCount").textContent = summaryFoods.length ? String(summaryFoods.length) : "";
+            document.getElementById("avgEnergy").textContent = `${formatFoodValue(energy)} kcal`;
+            document.getElementById("avgSugar").textContent = `${formatFoodValue(sugar)} g`;
+            document.getElementById("avgFat").textContent = `${formatFoodValue(fat)} g`;
+            document.getElementById("foodDonut").style.background = summaryFoods.length ? "" : "#e8efea";
+
+            const chartValues = { energy: energy === null ? 0 : energy / 5, sugar: sugar === null ? 0 : sugar * 2, fat: fat === null ? 0 : fat * 2 };
+            const chartMax = Math.max(100, ...Object.values(chartValues));
+            Object.entries(chartValues).forEach(([key, value]) => {
+                const bar = document.querySelector(`[data-chart-bar="${key}"]`);
+                if (bar) bar.style.height = `${summaryFoods.length ? Math.max(value ? 5 : 2, Math.min(96, value / chartMax * 96)) : 0}%`;
+            });
+
+            const visibleFoods = getVisibleFoodDashboardData();
+            document.getElementById("foodResultCount").textContent = `${visibleFoods.length} รายการ`;
+            const browserGrid = document.getElementById("foodBrowserGrid");
+            const showMore = document.getElementById("foodShowMore");
+            const brandSelect = document.getElementById("foodListingBrand");
+            const currentBrand = brandSelect.value || foodListingBrand;
+            const brands = [...new Set(foodDashboardData.map((food) => String(food.brand || "").trim()).filter(Boolean))].sort();
+            brandSelect.replaceChildren(new Option("ทุกแบรนด์", "all"));
+            brands.forEach((brand) => brandSelect.add(new Option(brand, brand)));
+            foodListingBrand = brands.includes(currentBrand) ? currentBrand : "all";
+            brandSelect.value = foodListingBrand;
+            browserGrid.replaceChildren();
+            document.querySelectorAll(".food-category-filters [data-food-category], .food-listing-categories [data-food-category]").forEach((button) => {
+                button.classList.toggle("is-selected", button.dataset.foodCategory === foodDashboardCategory);
+            });
+            document.querySelectorAll(".food-score-options [data-nutri-score]").forEach((button) => {
+                button.classList.toggle("is-selected", selectedFoodNutriScores.has(button.dataset.nutriScore));
+            });
+            document.querySelectorAll('input[name="listingCategory"]').forEach((input) => {
+                input.checked = input.value === foodDashboardCategory;
+            });
+
+            if (!visibleFoods.length) {
+                [browserGrid].forEach((container) => {
+                    const empty = document.createElement("p");
+                    empty.className = "food-empty-state";
+                    empty.textContent = foodDashboardData.length ? "ไม่พบสินค้าที่ตรงกับเงื่อนไข" : "ยังไม่มีข้อมูลอาหารให้แสดง";
+                    container.appendChild(empty);
+                });
+                showMore.hidden = true;
+                renderFoodCompareTray();
+                renderNutritionWarnings();
+                return;
+            }
+
+            visibleFoods.slice(0, foodListingVisibleLimit).forEach((food) => browserGrid.appendChild(createFoodListingCard(food)));
+            showMore.hidden = visibleFoods.length <= foodListingVisibleLimit;
+            renderFoodCompareTray();
+            renderNutritionWarnings();
+        }
+
+        async function loadFoodDashboard() {
+            const error = document.getElementById("foodLoadError");
+            error.hidden = true;
+
+            try {
+                const response = await fetch("/foods?sort=sugar&page=1&limit=200", { cache: "no-store" });
+                const contentType = response.headers.get("content-type") || "";
+                const result = contentType.includes("application/json") ? await response.json() : null;
+                if (!response.ok) throw new Error(result?.error || `โหลดข้อมูลอาหารไม่สำเร็จ (HTTP ${response.status})`);
+                const apiProducts = Array.isArray(result?.data) ? result.data : [];
+                foodDashboardData = apiProducts;
+                if (apiProducts.length) error.hidden = true;
+                else {
+                    error.textContent = "ยังไม่มีสินค้าในฐานข้อมูล";
+                    error.hidden = false;
+                }
+                renderFoodDashboard();
+            } catch (loadError) {
+                foodDashboardData = [];
+                renderFoodDashboard();
+                error.textContent = `เชื่อมต่อฐานข้อมูลสินค้าไม่ได้ (${loadError.message || "เกิดข้อผิดพลาด"})`;
+                error.hidden = false;
+                console.error("Unable to load FoodCheck products:", loadError);
+            }
+        }
+
+        function selectFoodDashboardCategory(category) {
+            foodDashboardCategory = category;
+            document.querySelectorAll(".food-category-filters [data-food-category], .food-listing-categories [data-food-category]").forEach((button) => {
+                button.classList.toggle("is-selected", button.dataset.foodCategory === category);
+            });
+            renderFoodDashboard();
+        }
+
+        document.querySelectorAll("[data-food-category]").forEach((button) => {
+            button.addEventListener("click", () => {
+                setFoodListingView(true, button.dataset.foodCategory || "all");
+                document.getElementById("food-products").scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        });
+        document.getElementById("foodSearchForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+            document.getElementById("dashboardSearch").value = document.getElementById("foodSearchInput").value;
+            setFoodListingView(true);
+            renderFoodDashboard();
+            document.getElementById("food-products").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+        document.getElementById("foodSearchInput").addEventListener("input", () => {
+            document.getElementById("dashboardSearch").value = document.getElementById("foodSearchInput").value;
+            document.getElementById("foodListingSearchInput").value = document.getElementById("foodSearchInput").value;
+            renderFoodDashboard();
+        });
+        document.getElementById("dashboardSearch").addEventListener("input", (event) => {
+            document.getElementById("foodSearchInput").value = event.currentTarget.value;
+            document.getElementById("foodListingSearchInput").value = event.currentTarget.value;
+            renderFoodDashboard();
+        });
+        document.getElementById("foodListingSort").addEventListener("change", renderFoodDashboard);
+        document.getElementById("foodListingSearchForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+            const keyword = document.getElementById("foodListingSearchInput").value;
+            document.getElementById("foodSearchInput").value = keyword;
+            document.getElementById("dashboardSearch").value = keyword;
+            renderFoodDashboard();
+        });
+        document.getElementById("foodListingSearchInput").addEventListener("input", (event) => {
+            document.getElementById("foodSearchInput").value = event.currentTarget.value;
+            document.getElementById("dashboardSearch").value = event.currentTarget.value;
+            renderFoodDashboard();
+        });
+        document.getElementById("foodProductSearchForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+            setFoodSearchView();
+            searchFoodProducts(1);
+        });
+        document.getElementById("nutritionWarningSearchForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+            document.getElementById("nutritionWarningFilterInput").value = document.getElementById("nutritionWarningSearchInput").value;
+            renderNutritionWarnings();
+        });
+        document.getElementById("nutritionWarningSearchInput").addEventListener("input", (event) => {
+            document.getElementById("nutritionWarningFilterInput").value = event.currentTarget.value;
+            renderNutritionWarnings();
+        });
+        document.getElementById("nutritionWarningFilterInput").addEventListener("input", (event) => {
+            document.getElementById("nutritionWarningSearchInput").value = event.currentTarget.value;
+            renderNutritionWarnings();
+        });
+        document.querySelectorAll("[data-warning-filter]").forEach((button) => {
+            button.addEventListener("click", () => {
+                nutritionWarningFilter = button.dataset.warningFilter;
+                document.querySelectorAll("[data-warning-filter]").forEach((filterButton) => {
+                    const selected = filterButton === button;
+                    filterButton.classList.toggle("is-selected", selected);
+                    filterButton.setAttribute("aria-pressed", String(selected));
+                });
+                renderNutritionWarnings();
+            });
+        });
+        document.getElementById("allergyProductSearchForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+            document.getElementById("foodProductSearchInput").value = document.getElementById("allergyProductSearchInput").value;
+            setFoodSearchView();
+            searchFoodProducts(1);
+        });
+        document.getElementById("allergyChooseButton").addEventListener("click", () => {
+            document.getElementById("allergyChoices").scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+        document.getElementById("allergyOptionGrid").addEventListener("click", (event) => {
+            const button = event.target.closest("button[data-allergen]");
+            if (!button) return;
+            const key = button.dataset.allergen;
+            if (draftFoodAllergens.has(key)) draftFoodAllergens.delete(key);
+            else draftFoodAllergens.add(key);
+            allergySaveMessage = "";
+            renderAllergyAlertSettings();
+        });
+        document.getElementById("allergyConfirmButton").addEventListener("click", () => {
+            const confirmedAllergens = [...draftFoodAllergens];
+            try {
+                localStorage.setItem(FOOD_ALLERGEN_KEY, JSON.stringify(confirmedAllergens));
+            } catch (error) {
+                console.error("Unable to save allergy alert settings:", error);
+                showNotice("บันทึกการตั้งค่าสารก่อภูมิแพ้ไม่สำเร็จ กรุณาตรวจสอบพื้นที่จัดเก็บของเบราว์เซอร์");
+                return;
+            }
+            selectedFoodAllergens.clear();
+            confirmedAllergens.forEach((key) => selectedFoodAllergens.add(key));
+            allergySaveMessage = "บันทึกการเลือกแล้ว";
+            renderAllergyAlertSettings();
+            renderFoodDashboard();
+            renderNutritionWarnings();
+            if (foodSearchProducts.length) renderFoodSearchResults();
+        });
+        document.getElementById("allergyClearButton").addEventListener("click", () => {
+            try {
+                localStorage.removeItem(FOOD_ALLERGEN_KEY);
+            } catch (error) {
+                console.error("Unable to clear allergy alert settings:", error);
+                showNotice("ล้างการตั้งค่าสารก่อภูมิแพ้ไม่สำเร็จ กรุณาตรวจสอบพื้นที่จัดเก็บของเบราว์เซอร์");
+                return;
+            }
+            selectedFoodAllergens.clear();
+            draftFoodAllergens.clear();
+            allergySaveMessage = "ล้างรายการแพ้แล้ว";
+            renderAllergyAlertSettings();
+            renderFoodDashboard();
+            renderNutritionWarnings();
+            if (foodSearchProducts.length) renderFoodSearchResults();
+        });
+        document.querySelectorAll("[data-food-search-term]").forEach((button) => {
+            button.addEventListener("click", () => {
+                document.getElementById("foodProductSearchInput").value = button.dataset.foodSearchTerm;
+                setFoodSearchView();
+                searchFoodProducts(1);
+            });
+        });
+        document.getElementById("foodSearchPrevious").addEventListener("click", () => {
+            if (foodSearchPage > 1) searchFoodProducts(foodSearchPage - 1);
+        });
+        document.getElementById("foodSearchNext").addEventListener("click", () => {
+            if (foodSearchPage < foodSearchTotalPages) searchFoodProducts(foodSearchPage + 1);
+        });
+        document.querySelectorAll('input[name="listingCategory"]').forEach((input) => {
+            input.addEventListener("change", () => selectFoodDashboardCategory(input.value));
+        });
+        document.getElementById("foodListingBrand").addEventListener("change", (event) => {
+            foodListingBrand = event.currentTarget.value;
+            renderFoodDashboard();
+        });
+        document.querySelectorAll("[data-nutri-score]").forEach((button) => {
+            button.addEventListener("click", () => {
+                const score = button.dataset.nutriScore;
+                if (selectedFoodNutriScores.has(score)) selectedFoodNutriScores.delete(score);
+                else selectedFoodNutriScores.add(score);
+                renderFoodDashboard();
+            });
+        });
+        document.querySelectorAll("[data-nutrient]").forEach((input) => input.addEventListener("change", renderFoodDashboard));
+        document.getElementById("foodFilterReset").addEventListener("click", () => {
+            selectFoodDashboardCategory("all");
+            selectedFoodNutriScores.clear();
+            foodListingBrand = "all";
+            document.getElementById("foodListingSearchInput").value = "";
+            document.getElementById("foodSearchInput").value = "";
+            document.getElementById("dashboardSearch").value = "";
+            document.querySelectorAll("[data-nutrient]").forEach((input) => { input.checked = false; });
+            renderFoodDashboard();
+        });
+        document.getElementById("foodShowMore").addEventListener("click", () => {
+            foodListingVisibleLimit += 12;
+            renderFoodDashboard();
+        });
+        document.getElementById("foodClearCompare").addEventListener("click", () => {
+            foodCompareSelection.length = 0;
+            foodComparisonSummary = [];
+            renderFoodDashboard();
+        });
+        document.getElementById("foodCompareButton").addEventListener("click", () => {
+            if (foodCompareSelection.length < 2) return;
+            foodComparisonSummary = [...foodCompareSelection];
+            renderFoodDashboard();
+            renderFoodComparison();
+            document.getElementById("foodCompareDialog").showModal();
+        });
+        document.getElementById("foodCompareClose").addEventListener("click", () => document.getElementById("foodCompareDialog").close());
+        document.getElementById("foodCompareDialog").addEventListener("click", (event) => {
+            if (event.target === event.currentTarget) event.currentTarget.close();
+        });
+        document.querySelectorAll("[data-food-nav]").forEach((link) => {
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                const destination = link.dataset.foodNav;
+                if (destination === "alerts") {
+                    setAllergyAlertView();
+                    return;
+                } else if (destination === "warnings") {
+                    setNutritionWarningView();
+                    return;
+                } else if (destination === "search") {
+                    setFoodSearchView();
+                    document.getElementById("foodProductSearchInput").focus();
+                    return;
+                } else if (destination === "products" || destination === "choose") {
+                    setFoodListingView(true, null, destination);
+                } else if (destination === "nutrition") {
+                    setFoodListingView(false, null, destination);
+                } else {
+                    setFoodListingView(true, null, destination);
+                }
+                const targetId = destination === "nutrition" ? "nutrition-insights" : destination === "categories" ? "food-categories" : "food-products";
+                document.getElementById(targetId).scrollIntoView({ behavior: "smooth", block: "start" });
+            });
+        });
+        document.querySelectorAll('a[href="#food-alerts"]').forEach((link) => {
+            if (link.matches("[data-food-nav]")) return;
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                setAllergyAlertView();
+            });
+        });
+        document.querySelectorAll('a[href="#nutrition-warning"]').forEach((link) => {
+            if (link.matches("[data-food-nav]")) return;
+            link.addEventListener("click", (event) => {
+                event.preventDefault();
+                setNutritionWarningView();
+            });
+        });
+        document.querySelectorAll('.side-link[data-dashboard-nav="home"]').forEach((link) => {
+            link.addEventListener("click", () => {
+                setFoodListingView(false, null, "home");
+            });
+        });
+        document.querySelectorAll(".food-shortcut[href='#food-products']").forEach((link) => {
+            link.addEventListener("click", () => setFoodListingView(true));
+        });
+        if (window.location.hash === "#food-products") setFoodListingView(true);
+        else if (window.location.hash === "#food-search") setFoodSearchView();
+        else if (window.location.hash === "#food-alerts") setAllergyAlertView();
+        else if (window.location.hash === "#nutrition-warning") setNutritionWarningView();
+
         function setAuthenticatedUser(user) {
             const accountChanged = (authenticatedUser && authenticatedUser.id) !== (user && user.id);
             authenticatedUser = user;
-            dashboardShell.inert = !user;
-            dashboardShell.classList.toggle("is-locked", !user);
-            document.getElementById("authNavLabel").textContent = user ? "ออกจากระบบ" : "เข้าสู่ระบบ";
-            authNavButton.setAttribute("aria-label", user ? `ออกจากระบบ ${user.name}` : "เข้าสู่ระบบ");
+            dashboardShell.inert = false;
+            dashboardShell.classList.remove("is-locked");
             document.getElementById("profileButton").setAttribute("aria-label", user ? `บัญชีผู้ใช้ ${user.name}` : "บัญชีผู้ใช้");
+            if (!user) loadFoodDashboard();
             renderSettingsPage();
             if (accountChanged) {
                 careLoadVersion += 1;
@@ -3814,6 +5605,7 @@
                 renderCatProfile();
                 if (user) {
                     careSyncState = "loading";
+                    loadFoodDashboard();
                     loadCareScheduleForUser(user, careLoadVersion);
                     loadCatProfileForUser(user, catProfileLoadVersion);
                     loadCatImage();
@@ -3823,8 +5615,7 @@
                     renderCarePage();
                 }
             }
-            if (user && authDialog.open) authDialog.close();
-            if (!user && authDialog.open) openAuthDialog("login");
+            if (authDialog.open) authDialog.close();
         }
 
         function setAuthFieldError(input, message) {
@@ -4082,12 +5873,11 @@
                 if (!response.ok) throw new Error("ไม่สามารถตรวจสอบสถานะบัญชีได้");
                 const result = await response.json();
                 setAuthenticatedUser(result.user);
-                if (!result.user) openAuthDialog("login");
+                if (!result.user && authDialog.open) authDialog.close();
             } catch (error) {
                 console.error("Unable to load account session:", error);
                 setAuthenticatedUser(null);
-                openAuthDialog("login");
-                document.getElementById("loginMessage").textContent = "ตรวจสอบบัญชีไม่สำเร็จ กรุณาลองเข้าสู่ระบบอีกครั้ง";
+                if (authDialog.open) authDialog.close();
             }
         }
 

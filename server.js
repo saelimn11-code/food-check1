@@ -596,8 +596,146 @@ const EXTRA_CATEGORY_PRODUCTS = [
         apiImage: "",
         customImage: "",
         category: "bread"
+    },
+    {
+        id: "3017620422003",
+        name: "Nutella Hazelnut Spread",
+        brand: "Ferrero, Nutella",
+        flavor: "Hazelnut cocoa spread",
+        barcode: "3017620422003",
+        nutriScore: "E",
+        energy: 539,
+        sugar: 56.3,
+        fat: 30.9,
+        protein: 6.3,
+        ingredients: "Sugar, palm oil, hazelnuts, skimmed milk powder, cocoa, soy lecithins, vanillin",
+        image: "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_en.879.400.jpg",
+        apiImage: "https://images.openfoodfacts.org/images/products/301/762/042/2003/front_en.879.400.jpg",
+        customImage: "",
+        category: "chips"
+    },
+    {
+        id: "5000159484695",
+        name: "Twix glacé",
+        brand: "Twix",
+        flavor: "Caramel and chocolate ice cream",
+        barcode: "5000159484695",
+        nutriScore: "E",
+        energy: 280.74,
+        sugar: 25.52,
+        fat: 14.62,
+        protein: 2.78,
+        ingredients: "Sugar, glucose syrup, skimmed milk, cream, cocoa butter, coconut fat, wheat flour, palm fat, soy lecithin, salt",
+        image: "https://images.openfoodfacts.org/images/products/500/015/948/4695/front_fr.85.400.jpg",
+        apiImage: "https://images.openfoodfacts.org/images/products/500/015/948/4695/front_fr.85.400.jpg",
+        customImage: "",
+        category: "chips"
+    },
+    {
+        id: "7622210449283",
+        name: "LU Prince Wholegrain Chocolate Biscuits",
+        brand: "LU, Prince",
+        flavor: "Wholegrain chocolate",
+        barcode: "7622210449283",
+        nutriScore: "E",
+        energy: 467,
+        sugar: 32,
+        fat: 17,
+        protein: 6.3,
+        ingredients: "Wheat flour, whole wheat flour, sugar, vegetable oils, cocoa, glucose syrup, salt",
+        image: "https://images.openfoodfacts.org/images/products/762/221/044/9283/front_en.605.400.jpg",
+        apiImage: "https://images.openfoodfacts.org/images/products/762/221/044/9283/front_en.605.400.jpg",
+        customImage: "",
+        category: "chips"
     }
 ];
+
+const DEMO_PRODUCT_GROUPS = [
+    {
+        category: "milk",
+        names: ["นมโคพาสเจอร์ไรส์รสจืด", "นมโคยูเอชทีรสช็อกโกแลต", "นมถั่วเหลืองสูตรดั้งเดิม", "นมถั่วเหลืองไม่เติมน้ำตาล", "นมอัลมอนด์สูตรดั้งเดิม", "นมข้าวโอ๊ตสูตรต้นตำรับ", "โยเกิร์ตรสธรรมชาติ", "โยเกิร์ตพร้อมดื่มรสสตรอว์เบอร์รี", "นมเปรี้ยวพร้อมดื่ม", "ชีสเชดดาร์แบบแผ่น"],
+        sizes: ["250 มล.", "1 ลิตร"],
+        nutrition: { energy: 110, sugar: 8, fat: 4, protein: 4 }
+    },
+    {
+        category: "chips",
+        names: ["มันฝรั่งทอดกรอบรสดั้งเดิม", "มันฝรั่งทอดกรอบรสสาหร่าย", "ข้าวโพดอบกรอบรสชีส", "ขนมข้าวอบกรอบรสซาวครีม", "ถั่วลิสงอบเกลือ", "อัลมอนด์อบ", "เม็ดมะม่วงหิมพานต์อบ", "แครกเกอร์รสเกลือ", "ป๊อปคอร์นรสคาราเมล", "บิสกิตช็อกโกแลต"],
+        sizes: ["40 ก.", "120 ก."],
+        nutrition: { energy: 480, sugar: 8, fat: 24, protein: 7 }
+    },
+    {
+        category: "bread",
+        names: ["ขนมปังโฮลวีต", "ขนมปังแผ่นขาว", "ขนมปังธัญพืช", "ขนมปังไรย์", "ขนมปังไส้ถั่วแดง", "ขนมปังไส้ครีม", "ครัวซองต์เนย", "ขนมปังข้าวโอ๊ต", "มัฟฟินกล้วยหอม", "แซนด์วิชทูน่า"],
+        sizes: ["2 ชิ้น", "6 ชิ้น"],
+        nutrition: { energy: 270, sugar: 9, fat: 7, protein: 8 }
+    },
+    {
+        category: "rice",
+        names: ["ข้าวหอมมะลิ", "ข้าวกล้องหอมมะลิ", "ข้าวไรซ์เบอร์รี", "ข้าวโอ๊ตเต็มเมล็ด", "ซีเรียลข้าวโพด", "กราโนล่าผสมผลไม้", "ธัญพืชอบกรอบ", "ข้าวแต๋นรสหวาน", "ข้าวกล้องงอก", "คีนัวผสมธัญพืช"],
+        sizes: ["250 ก.", "1 กก."],
+        nutrition: { energy: 360, sugar: 5, fat: 4, protein: 9 }
+    },
+    {
+        category: "juice",
+        names: ["น้ำส้มผสมเนื้อส้ม", "น้ำแอปเปิล", "น้ำมะเขือเทศ", "น้ำองุ่นแดง", "ชามะนาวพร้อมดื่ม", "ชาเขียวไม่เติมน้ำตาล", "กาแฟนมพร้อมดื่ม", "น้ำมะพร้าว", "เครื่องดื่มมะม่วง", "น้ำลิ้นจี่"],
+        sizes: ["250 มล.", "1 ลิตร"],
+        nutrition: { energy: 65, sugar: 11, fat: 1, protein: 1 }
+    }
+];
+
+function createDemoProductImage(category, index) {
+    const palettes = [
+        { background: "#edf8f0", accent: "#168a5b", light: "#bfe7ce" },
+        { background: "#fff4e8", accent: "#df7a32", light: "#f6d2a8" },
+        { background: "#eef5fb", accent: "#3e82ad", light: "#c2dced" },
+        { background: "#fff0ee", accent: "#c95c59", light: "#f0c2ba" },
+        { background: "#f4f3e8", accent: "#7d8c3d", light: "#d9dfaa" }
+    ];
+    const palette = palettes[index % palettes.length];
+    const label = { milk: "DAIRY", chips: "SNACK", bread: "BAKERY", rice: "GRAINS", juice: "DRINK" }[category] || "FOOD";
+    const packageShape = {
+        milk: `<path d="M91 48h43l30 28v118H91z" fill="#fff" stroke="${palette.accent}" stroke-width="5"/><path d="M91 48h43l-8 28H91z" fill="${palette.light}"/><path d="M134 48v28h30" fill="none" stroke="${palette.accent}" stroke-width="4"/>`,
+        chips: `<path d="M88 48q32 12 64 0l11 142q-43 18-86 0z" fill="#fff" stroke="${palette.accent}" stroke-width="5"/><path d="M91 65h58v28H91z" fill="${palette.light}"/>`,
+        bread: `<rect x="80" y="60" width="80" height="136" rx="25" fill="#fff" stroke="${palette.accent}" stroke-width="5"/><path d="M80 100q40-30 80 0v21H80z" fill="${palette.light}"/>`,
+        rice: `<path d="M95 48q25 18 50 0l18 140q-43 22-86 0z" fill="#fff" stroke="${palette.accent}" stroke-width="5"/><path d="M95 52h50v24H95z" fill="${palette.light}"/>`,
+        juice: `<path d="M108 43h24v23l20 18v108q-32 12-64 0V84l20-18z" fill="#fff" stroke="${palette.accent}" stroke-width="5"/><path d="M108 43h24v23h-24z" fill="${palette.light}"/>`
+    }[category];
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240"><rect width="240" height="240" rx="24" fill="${palette.background}"/><circle cx="188" cy="48" r="18" fill="${palette.light}"/><circle cx="52" cy="184" r="12" fill="${palette.light}"/>${packageShape}<rect x="91" y="108" width="72" height="42" rx="8" fill="${palette.light}"/><text x="127" y="125" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="${palette.accent}">DEMO</text><text x="127" y="140" text-anchor="middle" font-family="Arial,sans-serif" font-size="8" font-weight="700" fill="${palette.accent}">${label}</text><path d="M105 166h44" stroke="${palette.accent}" stroke-width="3" stroke-linecap="round"/><text x="120" y="222" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" font-weight="700" fill="${palette.accent}">SAMPLE PRODUCT</text></svg>`;
+    return `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`;
+}
+
+function createDemoProductCatalog() {
+    return DEMO_PRODUCT_GROUPS.flatMap((group) => group.names.flatMap((name, itemIndex) => group.sizes.map((size, sizeIndex) => {
+        const index = itemIndex * group.sizes.length + sizeIndex;
+        const variation = index % 5;
+        const id = `demo-${group.category}-${String(index + 1).padStart(2, "0")}`;
+        return {
+            id,
+            name: `${name} ${size}`,
+            brand: "สินค้าเดโม",
+            flavor: "สูตรตัวอย่าง",
+            barcode: id,
+            nutriScore: "-",
+            energy: group.nutrition.energy + variation * 4,
+            sugar: group.nutrition.sugar + variation,
+            fat: group.nutrition.fat + variation,
+            protein: group.nutrition.protein + variation,
+            ingredients: "ข้อมูลโภชนาการตัวอย่างเพื่อการสาธิตเท่านั้น",
+            image: createDemoProductImage(group.category, index),
+            apiImage: "",
+            customImage: "",
+            category: group.category,
+            isSample: true
+        };
+    })));
+}
+
+function createBuiltInFoodCatalog() {
+    const builtInProducts = EXTRA_CATEGORY_PRODUCTS
+        .filter((product) => !REMOVED_PRODUCT_CODES.has(String(product.barcode || product.id || "").trim()) && !isBlockedProduct(product))
+        .map((product) => ({ ...product, category: product.category || inferFoodCategory(product) }));
+    return [...builtInProducts, ...createDemoProductCatalog()];
+}
 
 function wait(ms) {
     return new Promise((resolve) => setTimeout(resolve, ms));
@@ -784,6 +922,8 @@ function normalizeFoodRecord(product, matchedBrand) {
     const name = product.product_name || product.product_name_en || product.product_name_th || product.generic_name || product.product_name_fr || "-";
     const brand = product.brands || matchedBrand || "-";
     const barcode = String(product.code || product._id || "").trim();
+    const energyKcal = extractProductNumber(product, ["energy-kcal_100g"]);
+    const energyKj = extractProductNumber(product, ["energy_100g"]);
 
     return {
         id: String(product.code || product._id || `${name}-${brand}-${Math.random().toString(16).slice(2)}`),
@@ -792,7 +932,7 @@ function normalizeFoodRecord(product, matchedBrand) {
         flavor: getProductFlavor(product),
         barcode: barcode || "-",
         nutriScore: product.nutriscore_grade || product.nutrition_grades || "-",
-        energy: extractProductNumber(product, ["energy-kcal_100g", "energy_100g"]),
+        energy: energyKcal ?? (energyKj === undefined ? undefined : energyKj / 4.184),
         sugar: extractProductNumber(product, ["sugars_100g", "sugar_100g"]),
         fat: extractProductNumber(product, ["fat_100g", "fat_total_100g"]),
         protein: extractProductNumber(product, ["proteins_100g", "proteins"]),
@@ -804,18 +944,12 @@ function normalizeFoodRecord(product, matchedBrand) {
 }
 
 async function fetchOpenFoodFactsByBrand(brand, page = 1, retries = 3) {
-    const url = new URL("https://world.openfoodfacts.org/cgi/search.pl");
+    const url = new URL("https://world.openfoodfacts.org/api/v2/search");
     url.search = new URLSearchParams({
         search_terms: brand,
-        search_simple: "1",
-        action: "process",
-        tagtype_0: "brands",
-        tag_contains_0: "contains",
-        tag_0: brand,
         sort_by: "unique_scans_n",
         page: String(page),
         page_size: String(PAGE_SIZE),
-        json: "1",
         fields: "product_name,product_name_en,product_name_th,generic_name,brands,code,image_front_url,image_front_small_url,image_url,image_front_thumb_url,selected_images,nutriments,ingredients_text,ingredients_text_th,ingredients_text_en,nutriscore_grade,nutrition_grades,flavor,flavour,quantity"
     }).toString();
 
@@ -852,6 +986,7 @@ async function fetchOpenFoodFactsByBrand(brand, page = 1, retries = 3) {
 }
 
 async function loadFoods() {
+    foods = createBuiltInFoodCatalog();
     const seen = new Map();
 
     const activeBrands = [
@@ -937,6 +1072,8 @@ async function loadFoods() {
         foods.push(...extraFoods);
     }
 
+    foods.push(...createDemoProductCatalog());
+
     if (!foods.length) {
         console.warn("Open Food Facts ไม่มีข้อมูลสำหรับแบรนด์ที่เลือก");
         foods = [];
@@ -1019,9 +1156,10 @@ const upload = multer({
             callback(null, filename);
         }
     }),
+    limits: { fileSize: 5 * 1024 * 1024, files: 1 },
     fileFilter: (_, file, callback) => {
-        if (!file || !file.mimetype || !file.mimetype.startsWith("image/")) {
-            callback(new Error("ไฟล์ที่อัปโหลดต้องเป็นรูปภาพ"));
+        if (!file || !["image/jpeg", "image/png", "image/webp"].includes(file.mimetype)) {
+            callback(new Error("รองรับเฉพาะไฟล์ JPG, PNG หรือ WEBP"));
             return;
         }
 
@@ -1598,7 +1736,56 @@ app.post("/api/edited-products", requireAuthenticatedApi, (req, res) => {
     }
 });
 
-app.get("/foods", requireAuthenticatedApi, (req, res) => {
+app.get("/api/products/search", async (req, res) => {
+    const searchTerms = String(req.query.q || "").trim();
+    const page = Number(req.query.page || 1);
+    if (searchTerms.length < 2 || searchTerms.length > 100) {
+        return res.status(400).json({ error: "กรุณากรอกคำค้นหาความยาว 2-100 ตัวอักษร" });
+    }
+    if (!Number.isInteger(page) || page < 1 || page > 1000) {
+        return res.status(400).json({ error: "หมายเลขหน้าค้นหาไม่ถูกต้อง" });
+    }
+
+    const url = new URL("https://world.openfoodfacts.org/api/v2/search");
+    url.search = new URLSearchParams({
+        search_terms: searchTerms,
+        sort_by: "unique_scans_n",
+        page: String(page),
+        page_size: "24",
+        fields: "product_name,product_name_en,product_name_th,generic_name,brands,code,image_front_url,image_front_small_url,image_url,image_front_thumb_url,selected_images,nutriments,ingredients_text,ingredients_text_th,ingredients_text_en,nutriscore_grade,nutrition_grades,flavor,flavour,quantity"
+    }).toString();
+
+    try {
+        const response = await fetch(url.toString(), {
+            headers: {
+                "User-Agent": "FoodCheck/1.0 (student-project)",
+                "Accept": "application/json",
+                "Accept-Language": "th,en-US;q=0.9,en;q=0.8"
+            },
+            signal: AbortSignal.timeout(15000)
+        });
+        if (!response.ok) {
+            return res.status(502).json({ error: `Open Food Facts ตอบกลับด้วยสถานะ ${response.status}` });
+        }
+
+        const result = await response.json();
+        const products = Array.isArray(result.products) ? result.products : [];
+        const data = products
+            .map((product) => normalizeFoodRecord(product))
+            .filter((product) => product.name && product.name !== "-");
+        return res.json({
+            data,
+            page: Number(result.page || page),
+            totalPages: Number(result.page_count || 1),
+            count: Number(result.count || data.length)
+        });
+    } catch (error) {
+        console.error("Open Food Facts product search failed:", error);
+        return res.status(502).json({ error: "เชื่อมต่อ Open Food Facts ไม่สำเร็จ กรุณาลองใหม่อีกครั้ง" });
+    }
+});
+
+app.get("/foods", (req, res) => {
     const algo = req.query.sort || "sugar";
     const page = Math.max(1, Number(req.query.page || 1));
     const limit = Math.max(1, Number(req.query.limit || 12));
@@ -1633,21 +1820,33 @@ app.get("/foods", requireAuthenticatedApi, (req, res) => {
         totalPages,
         hasMore: page < totalPages,
         ms,
-        data: pageItems
+        data: pageItems.map((food) => {
+            const imageKey = String(food.barcode && food.barcode !== "-" ? food.barcode : food.id || "").trim();
+            const customImage = customImageMap[imageKey] || food.customImage || "";
+            if (!customImage) return food;
+            return {
+                ...food,
+                originalImage: food.originalImage || food.apiImage || food.image || "",
+                image: customImage,
+                customImage
+            };
+        })
     });
 });
 
 loadCustomImageMap();
 loadEditedProductsMap();
+
+app.listen(PORT, () => {
+    console.log(`FoodCheck running at http://localhost:${PORT}`);
+});
+
 loadFoods()
     .then(() => {
-        app.listen(PORT, () => {
-            console.log(`FoodCheck running at http://localhost:${PORT}`);
-        });
+        console.log(`FoodCheck inventory ready: ${foods.length} products loaded`);
     })
     .catch((error) => {
         console.error("Failed to load Open Food Facts data:", error.message);
-        app.listen(PORT, () => {
-            console.log(`FoodCheck running at http://localhost:${PORT} with empty inventory`);
-        });
+        foods = createBuiltInFoodCatalog();
+        console.log(`FoodCheck running at http://localhost:${PORT} with demo inventory`);
     });

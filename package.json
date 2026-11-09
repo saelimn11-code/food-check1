@@ -1,16 +1,23 @@
 {
-  "name": "meow-museum",
+  "name": "foodcheck---copy",
   "version": "1.0.0",
-  "private": true,
-  "type": "commonjs",
-  "engines": {
-    "node": ">=18"
-  },
+  "description": "",
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saelimn11-code/PawCare2.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/saelimn11-code/PawCare2/issues"
+  },
+  "homepage": "https://github.com/saelimn11-code/PawCare2#readme",
   "dependencies": {
-    "express": "^4.21.2",
-    "multer": "^2.0.2"
+    "express": "^5.3.0",
+    "multer": "^2.5.0"
   }
 }

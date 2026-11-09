@@ -7,12 +7,14 @@ async function searchFood() {
         return;
     }
 
-    const url =
-        "https://world.openfoodfacts.org/api/v2/search?categories_tags_en=" +
-        encodeURIComponent(keyword) +
-        "&page_size=10";
+    const url = new URL("https://world.openfoodfacts.org/api/v2/search");
+    url.search = new URLSearchParams({
+        search_terms: keyword,
+        page_size: "10",
+        fields: "product_name,brands,image_front_small_url,nutriments"
+    }).toString();
 
-    const response = await fetch(url);
+    const response = await fetch(url.toString());
     const data = await response.json();
 
     const foodList = document.getElementById("foodList");
